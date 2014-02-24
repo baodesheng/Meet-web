@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="唤醒沉睡的手机相册，记录一段故事——生活记录片">
+    <meta name="author" content="">    
+    <title>唤醒沉睡的手机相册，记录一段故事——生活记录片</title>
+    <link href="css/base.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+ 	<link href="css/meet.css" rel="stylesheet">
+    <link rel="shortcut icon" href="http://meet.liba.com/img/Icon@2x.png">
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>   
+  </head>
+  <body>
+	<div class="container-fluid liba-meet">
+    	<div class="meet-nav clearfix">
+ 			<ul>
+            	<li class="selected radius1">iOS</li>
+                <li class="radius2">Android</li>
+            </ul>       	
+        </div>
+ 		<div class="row-fluid">
+    		<div class="span2">
+        		<div class="logo"><img src="./images/logo.png"/></div>
+        	</div>
+       		<div class="span6">
+            	<div id="system-0">
+        			<div class="title">生活纪录片 </div>
+                	<div class="remark">『唤醒沉睡的手机相册，记录一段故事』</div>
+                	<div class="version">
+						<p>V2.0 新版已发布</p>
+						<p>更新时间：2013.9.18</p>
+ 					</div>
+                	<div class="download"><a href="https://itunes.apple.com/us/app/sheng-huo-ji-lu-pian/id590218307?ls=1&mt=8"><img src="./images/loaddown.png"/></a></div>               
+                	<div class="update-infor">
+  						<div class="update-hd">2.0版更新信息</div>
+                   		<div class="update-bd">
+                    		<ul>
+                        		<li>在手机上创建，发布纪录片（目前不支持 iPad 版）</li>
+                            	<li>支持多图上传，只要短短几分钟就可以变成一篇精美的纪录片</li>
+                            	<li>新增收藏纪录片功能</li>
+                            	<li>iPad 也迎来了全新的阅读界面，全屏浏览非常震撼！</li>
+                        	</ul>
+                    	</div>              	
+  					</div>
+					<!--<div class="code-pic"><img src="./images/code.png"  alt="扫描二维码下载" /></div>
+                	<div class="code-title">扫描二维码下载</div>-->
+                </div>
+                <div id="system-1">
+                	<div class="title">敬请期待......</div>
+                </div>
+       		 </div>
+        	<div class="span4">
+				<div id="myCarousel" class="carousel slide">
+                	<ol class="carousel-indicators">
+						<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+						<li data-target="#myCarousel" data-slide-to="1"></li>
+						<li data-target="#myCarousel" data-slide-to="2"></li>
+                        <li data-target="#myCarousel" data-slide-to="3"></li>
+					</ol>
+            		<div class="carousel-inner">
+						<div class="item active"><img src="./images/jdt1.png"/></div>
+						<div class="item"><img src="./images/jdt2.png"/></div>
+ 						<div class="item"><img src="./images/jdt3.png"/></div>
+                		<div class="item"><img src="./images/jdt4.png"/></div>             
+            		</div>  
+				</div>
+			</div>	
+    	</div>
+        <div class="footer">Copyright 2003-2013 liba.com All rights reserved.篱笆网 版权所有</div> 
+ 	 </div> 
+     <script>
+	 $(function(){
+		$(".meet-nav li").click(
+		function(){						
+			var $this = $(this);
+			var index = $this.index();
+			if(index==0){
+				$(".logo img").show();
+			}else{
+				$(".logo img").hide();
+			}
+			var systemName = "#system-"+index;
+			$(systemName).siblings().hide();
+			$this.siblings().removeClass("selected");
+			$this.addClass("selected");
+			$(systemName).show();	
+		});		
+		$('.carousel').carousel();
+	});		
+	</script>
+	</body>
+</html>
+

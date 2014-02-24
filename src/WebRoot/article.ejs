@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Pragma" content="no-cache"/>
+	<meta http-equiv="no-cache"/>
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="viewport" content="user-scalable=yes,width=device-width, initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-itunes-app" content="app-id=590218307"/>
+	<title>生活纪录片</title>
+	<link href="css/life.css" rel="stylesheet" type="text/css"/>
+	<link href="css/emoji.css" rel="stylesheet"/>
+	<script src="js/jquery-1.9.1.js" type="text/javascript"></script>
+	<script src="js/jquery.lazyload.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		$(function() {
+		    $("img.lazy").lazyload({
+		        effect : "fadeIn"
+		    });
+		});
+	</script>
+</head>
+<body>
+<ul class="ui-list">
+    <%
+    var numReg = /\-\d+/g;
+    var emojiReg = /\[EMOJI\-\d+\]/;
+
+    if (creamData.title) {
+        var numString = creamData.title.match(numReg);
+        if (numString) {
+            for (var j=0; j<numString.length; j++) {
+                creamData.title = creamData.title.replace(emojiReg,"<span class=\"emoji"+numString[j]+" emoji-pic\"></span>");
+            }
+        }
+    }
+    %>
+	<li class="ui-list-item">
+		<div class="ui-doc">
+			<div class="ui-doc-img">
+				<img class="lazy" class="lazy" data-original="<%=creamData.image%>" />
+				<div class="ui-doc-param">
+					<div class="ui-doc-param-name"><%- creamData.title %></div>
+					<div class="ui-doc-param-date"><%=creamData.publish_time%></div>
+					<div class="ui-doc-param-icon"><img src="<%=user.avatar%>" /></div>
+					<div class="ui-doc-param-author"><%- creamData.author %></div>
+				</div>
+			</div>
+		</div>
+	</li>
+
+	<%
+	for (var i=0; i<itemData.length; i++) {
+        var item = itemData[i];
+
+        if (item.type == 1) { // type [1:section, 2:item]
+            //continue;
+        }
+
+        var itemImgUrl = (item.image_url ? item.image_url : "").trim();//针对精选
+        if (!itemImgUrl) {
+            itemImgUrl = (item.image ? item.image : "").trim();//针对原创
+        }
+
+        if (item.detail) {
+            var numString = item.detail.match(numReg);
+            if (numString) {
+                for (var j=0; j<numString.length; j++) {
+                    item.detail = item.detail.replace(emojiReg,"<span class='emoji"+numString[j]+" emoji-pic'></span>");
+                }
+            }
+        }
+        var itemNum = (i+1+1);
+        var imgId = "img" + itemNum;
+        var itemDetail;
+        if (itemImgUrl) {
+            itemDetail = (item.detail ? item.detail.replace(/\<br\>/gi,"\r\n") : "");
+        } else if (!numString) {
+            itemDetail = (item.detail ? (item.detail.replace(/^\s+|\s+$/g,"").replace(/\s+/g,"<br>")) : "");
+        } else {
+            itemDetail = item.detail;
+        }
+    %>
+
+	<li class="ui-list-item">
+		<div class="ui-doc">
+		    <% if (itemImgUrl) { %>
+			<div class="ui-doc-img">
+				<img class="lazy" data-original="<%- itemImgUrl %>" />
+			</div>
+		    <% } %>
+
+            <% if (itemDetail) { %>
+			<div class="ui-doc-text"><%- itemDetail%></div>
+			<% } %>
+		</div>
+	</li>
+
+
+    <% } %>
+
+</ul>
+<div class="ui-footer">
+	<img src="images/mark.png" width="72" height="72" alt="生活纪录片"/>
+	生活纪录片<br />记录一段故事
+</div>
+</body>
+</html>
+

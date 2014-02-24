@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta content="True" name="HandheldFriendly">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="viewport" content="user-scalable=yes,width=device-width, initial-scale=1.0">
+		<meta name="format-detection" content="telephone=no" />
+	    <title><%= creamData.title%></title>
+	    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<link href="css/bootstrap-responsive.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/style20131118.css"/>
+		<link rel="stylesheet" href="css/emoji.css"/>
+		<!--<link rel="stylesheet" href="css/swipe.css" type="text/css"/>-->
+	    <link rel="shortcut icon" href="/favicon.ico">
+	    <link rel="apple-touch-icon" href="/static/img/">
+	    <!--<script src="http://code.jquery.com/jquery.js"></script>-->
+	    <!--<script src="js/bootstrap.js"></script>-->
+	    <script src="js/swipe20131118.js"></script>
+	    <!--<script src="js/jquery.scrollLoading.js"></script>-->
+	</head>
+	<body>
+		<div id='slider4' class="swipe web-slide">    	
+        	<div>
+				<%
+					var numReg = /\-\d+/g;
+					var emojiReg = /\[EMOJI\-\d+\]/;
+					var recordTitle = creamData.title;
+					if(creamData.title){ 
+						var numString = recordTitle.match(numReg);
+						if(numString){
+							for(var i=0; i<numString.length; i++){
+								recordTitle = recordTitle.replace(emojiReg,"<span class='emoji"+numString[i]+" emoji-pic'></span>");
+							}
+						}
+					}
+				%>
+				<div class="item infor-page" item-num="0" style="display:block;">
+            		<div class="nickname"><%- recordTitle%></div>
+                	<div class="published"> <%=creamData.publish_time%></div>
+                	<img width="100px" height="100px" class="img-circle" src="<%=user.avatar%>">
+					<div class="author-name"><%=creamData.author%></div>
+				</div>
+				<div class="item" item-num="1" style="display:none;">
+					<%
+						var coverImgUrl = creamData.image;
+					%>
+					<div class="pic" data-src="<%=coverImgUrl%>">
+						<div class="swipe-caption">
+							<p><%- recordTitle%></p>
+						</div>  
+					</div>
+				</div>
+				<% for (var i=0;i<itemData.length;i++) {
+                        var item = itemData[i];
+
+                        if (item.type == 1) { // type [1:section, 2:item]
+                            //continue;
+                        }
+
+                        var itemImgUrl = (item.image_url ? item.image_url : "").trim();//针对精选
+                        if (!itemImgUrl) {
+                            itemImgUrl = (item.image ? item.image : "").trim();//针对原创
+                        }
+						var numReg = /\-\d+/g;
+						var emojiReg = /\[EMOJI\-\d+\]/; 
+						if(item.detail){
+							var numString = item.detail.match(numReg);
+							if(numString){
+								for(var j=0; j<numString.length; j++){
+									item.detail = item.detail.replace(emojiReg,"<span class='emoji"+numString[j]+" emoji-pic'></span>");
+								}
+							}
+						}
+                        var itemNum = (i+1+1);
+                        var imgId = "img" + itemNum;
+						var itemDetail;
+						if (itemImgUrl){
+							itemDetail = (item.detail ? item.detail.replace(/\<br\>/gi,"\r\n") : "");
+						}else if(!numString){
+							itemDetail = (item.detail ? (item.detail.replace(/^\s+|\s+$/g,"").replace(/\s+/g,"<br>")) : "");
+						}else{
+                            itemDetail = item.detail;
+                        }
+                    %>
+				<div class="item" item-num="<%=itemNum%>" style="display:none;">
+					<% if (itemImgUrl) { %>
+						<div class="pic" data-src="<%=itemImgUrl%>">
+							<% if (itemDetail) { %>						
+								<div class="swipe-caption"><p><%- itemDetail %></p></div>
+							<% } %>	
+						</div>
+					<% } %>
+					<% if (!itemImgUrl) { %>
+						<div class="no-pic-text"><%- itemDetail %></div>
+					<% } %>
+				</div>
+				<% }%>
+			</div>
+			<a class="left disbale-left" onclick='slider4.prev();' href="javascript:;"></a>
+			<a  class="right swipe-control" onclick='slider4.next();' href="javascript:;"></a>
+		</div>
+		 <div class="swipe-page"><span id="slider4-page">1</span>/<span id="slider4-total">11</span></div> 
+		<div class="mobile-icon">
+			<a href="https://itunes.apple.com/cn/app/sheng-huo-ji-lu-pian/id590218307?lt=8" target="_blank"><img src="img/mobile_download.png" /></a>
+		</div>
+		<div class="mobile-icon-web">
+			<a href="https://itunes.apple.com/cn/app/sheng-huo-ji-lu-pian/id590218307?lt=8" target="_blank"><img src="img/mobile_download_web.png" /></a>
+		</div>
+		<script>
+			var slider4 = new Swipe(document.getElementById('slider4'));
+		</script>
+	</body>
+	<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+
+      ga('create', 'UA-44370319-1', 'liba.com');
+      ga('send', 'pageview');
+    </script>
+</html>

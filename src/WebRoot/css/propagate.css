@@ -1,0 +1,26 @@
+@charset "utf-8";
+body {background:url(../images/line_bg.png) left top repeat-x #ecebe6;}
+.head {width:960px; margin:44px auto 0; position:relative;}
+.download-code {position:absolute; right:4px; width:96px; top:24px;}
+.download-code .code-title {color:#7d7d7d; top:10px; height:26px; line-height:26px; text-align:center;}
+.download {width:168px; height:54px; position:absolute; right:0; top:159px;}
+.head .logo {width:120px; height:120px; float:left; margin-right:32px; background:url(../images/logo.png?ver=1) left top no-repeat; font-size:0; line-height:0; overflow:hidden;}
+.head .text {width:500px; position:relative; float:left; margin-top:14px;}
+.text .title {color:#7d7d7d; font-size:16px;}
+.text .title span {font-size:14px;}
+.remark {font-size:12px;margin-top:5px;color:#cacaca;}
+.version {margin-top:20px;line-height:18px; color:#cacaca;}
+.update-infor {margin-top:20px; color:#b4b4b4; line-height:30px; font-size:16px;}
+.update-infor li {height:30px; padding-left:16px; background:url(../images/icon.png) 0 11px no-repeat;}
+
+.scroll_horizontal{position:relative; width:100%; height:498px;  margin:40px auto 0; background:url(../images/bg.png) left top repeat-x;}
+.scroll_horizontal .box{overflow:hidden;position:relative;width:100%;height:350px;padding-top:74px; margin:0 auto;}
+.scroll_horizontal .list{overflow:hidden;width:9999px;}
+.scroll_horizontal .list li{float:left;width:528px;padding:0 10px;}
+.scroll_horizontal .plus,
+.scroll_horizontal .minus{position:absolute;top:50px;width:30px;height:60px;background:#f90;cursor:pointer;display:none;}
+.scroll_horizontal .plus{left:10px;}
+.scroll_horizontal .minus{right:10px;}
+.scroll_horizontal .plus:hover,
+.scroll_horizontal .minus:hover{background:#f60;}
+

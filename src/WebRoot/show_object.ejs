@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta content="True" name="HandheldFriendly">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="viewport" content="user-scalable=yes,width=device-width, initial-scale=1.0">
+		<meta name="format-detection" content="telephone=no" />
+	    <title>2013年1月底韩国游 简单记录 主要贴吃的~~行前做了超多攻略</title>
+	    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<link href="css/bootstrap-responsive.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/style.css" type="text/css" />
+	    <link rel="shortcut icon" href="/favicon.ico">
+	    <link rel="apple-touch-icon" href="/static/img/">
+	    <script src="http://code.jquery.com/jquery.js"></script>
+	    <script src="js/bootstrap.js"></script>
+	    <script type="text/javascript">
+	    $(document).ready(function(){
+	      $(".page-list-switch").click(function(){
+	        $("#directory").animate({height: "toggle", opacity: "toggle"}, 500, function() {
+	      	    $(".page-list-switch").toggleClass("page-list-selected");
+	        });
+	      });
+
+          var selectMenu;
+	      $(".page-list-menu").click(function(){
+	        if (selectMenu) selectMenu.attr("class","page-list-menu");
+	        $(this).attr("class","thispage");
+	        selectMenu = $(this);
+	        $("#myCarousel").carousel(parseInt($(this).attr("num")));
+	      });
+
+          var topicId = <%=creamData.topic_id%>;
+          var sectionIndex = 0;
+          var itemIndex = 0;
+
+          var itemData = new Array();
+          <% for (var i=0;i<itemData.length;i++) {
+                var item = itemData[i];
+          %>
+              itemData[<%=i%>] = {sec_index:<%=item.sec_index%>, item_index:<%=item.item_index%>};
+          <%
+             }
+          %>
+
+	      $("#myCarousel").on("slid", function(event){// slide 滑动开始 slid 滑动结束
+	        // Get currently selected item
+            var item = $('#myCarousel .carousel-inner .item.active');
+            var itemNum = parseInt(item.attr("num"));
+	        //alert("itemNum:"+itemNum);
+            sectionIndex = itemData[itemNum].sec_index;
+            itemIndex = itemData[itemNum].item_index;
+	      });
+	    });
+	    </script>
+	</head>
+	<body>
+		<span class="page-left-mobile"><a href="#myCarousel" data-slide="prev" class="prev-data"></a></span>
+        <span class="page-right-mobile"><a href="#myCarousel" data-slide="next" ></a></span>
+		<div class="top">
+			<a href="###" class="page-list-mobile page-list-switch pull-right">目录</a>
+		</div>
+		<div class="container">
+		<div class="row-fluid">
+		  <div class="span9">
+		  	<div id="directory" style="display: none;">
+		  	<div class="directory clearfix">
+		  		<h1><%= creamData.title%></h1>
+		  		<div class="page-list-box">
+		  		<ol>
+		  		    <% var itemIndex = 0;
+		  		       for (var i=0;i<sectionData.length;i++) {
+		  		        var section = sectionData[i];
+		  		        if(i > 0) {
+		  		          itemIndex += sectionData[i-1].itemCount;
+		  		        }
+                    %>
+		  			<li><a href="###" class="page-list-menu" num="<%=itemIndex%>"><%=section.title%></a></li>
+		  			<% } %>
+		  		</ol>
+		  		</div>
+		  	</div>
+		  	</div>
+		  	<div id="myCarousel" class="content slide">
+		  		<div class="carousel-inner">
+                    <% for (var i=0;i<itemData.length;i++) {
+                        var item = itemData[i];
+                        var itemImgUrl = (item.image_url ? item.image_url : "").trim();
+                        var classActive = (i == 0 ? "active" : "");
+                        var itemDetail = (item.detail ? item.detail.replace(/\r?\n/g, "<br>") : "");
+                    %>
+                    <div class="<%=classActive%> item" num=<%=i%>>
+                    	<p class="img-box"><img src="<%=itemImgUrl%>" alt="" /></p>
+                    	<p class="text"><%- itemDetail %></p>
+                    </div>
+                    <% }%>
+		  		</div>
+		  	</div>
+		  	<!-- 2013.8.9新增 -->
+            <div class="icon"></div>
+            <div>生活纪录片</div>
+            <div class="app-down"><a href="https://itunes.apple.com/cn/app/sheng-huo-ji-lu-pian/id590218307?mt=8" target="_blank"><img src="img/badge_ios.png" alt="免费下载" /></a></div>
+            <div class="freetext">免费的！</div>
+            <!-- 2013.8.9新增 -->
+		  </div>
+		  <div class="span1">
+		  	<ul class="affix">
+		  		<li class="page-list"><a href="###" class="page-list-switch" title="目录"></a></li>
+		  		<li class="page-left"><a href="#myCarousel" data-slide="prev" title="上一页"></a></li>
+		  		<li class="page-right"><a href="#myCarousel" data-slide="next" title="下一页"></a></li>
+		  	</ul>
+		  </div>
+		</div>
+        </div>
+	</body>
+</html>

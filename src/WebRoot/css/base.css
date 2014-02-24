@@ -1,0 +1,29 @@
+/* base */
+body {margin:0; padding:0; font-size:12px;  font-family:Arial; [font-family:Arial,"Microsoft YaHei",微软雅黑,\5B8B\4F53;] color:#555; overflow-x:hidden; _position: relative; _z-index:1;}
+h1,h2,h3,h4,h5,h6,div,p,ul,ol,li,form,dl,dd,dt,textarea {margin:0;padding:0;}
+ul,ol,li,dl,dd,dt {list-style:none;}
+input,select,textarea {font-family:Verdana;font-size:12px;}
+.clear {clear:both;}
+.clearfix:after {content:"\20";display:block;height:0;clear:both;}
+.clearfix {zoom:1;}
+.clearleft {clear:left;}
+img {border:none;}
+em,i {font-style:normal;}
+a,a:link,a:visited {color:#58c; text-decoration:none;}
+a:hover {color:#58c;text-decoration:none;}
+table,td {empty-cells:show;}
+.fb {font-weight:bold;}
+.blank16 {height:16px;font-size:0;line-height:0;overflow:hidden;}
+.blank8 {height:8px;font-size:0;line-height:0;overflow:hidden;}
+.tr {text-align:right;}
+.fl,.fr{display:inline;}
+.fl {float:left;}
+.fr {float:right;}
+.hide {display:none;}
+.last {border-bottom:none !important;}
+.blank15 {height:15px; font-size:0; line-height:0; overflow:hidden;}
+select {font-size:12px; color:#555; border:1px solid #ccc;padding:1px 0;}
+.ff {font-family:\5fae\8f6f\96c5\9ed1;}
+.f14 {font-size:14px;}
+.f18 {font-size:18px;}
+.dis-none {display:none;}
