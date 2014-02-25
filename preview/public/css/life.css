@@ -31,7 +31,7 @@ img,object{max-width:100%}
 .ui-doc-img{position:relative;overflow:hidden;}
 .ui-doc-img img{display:block;margin-bottom: 19px;
 }
-.ui-doc-param{position:absolute;left:0;top:38px;width:100%;text-align:center;color:#FFF}
+.ui-doc-param{position:absolute;left:0;top:0;width:100%;text-align:center;color:#FFF;height: 200px;padding-top: 40px;background-color: rgba(0, 0, 0, 0.36);}
 .ui-doc-param-name{font-size:150%;text-shadow:0px 0px 3px #666;font-family:\5b8b\4f53}
 .ui-doc-param-date{font-size:12px}
 .ui-doc-param-icon{padding:14px 0 6px}
@@ -44,9 +44,12 @@ img,object{max-width:100%}
 }
 .ui-footer img{display:block;margin:0 auto;padding:20px 9px 7px 9px;
 }
-
+.cover{
+	height: 240px;
+	margin-bottom: 20px;
+}
 
 @media all and (min-width: 800px) {
-	.ui-doc-param{top:230px}
+	.ui-doc-param{top: 0;width: 100%;height: 240px;padding-top: 40px;background-color: rgba(0, 0, 0, 0.36);}
 	.ui-doc-img{border:0}
 }
