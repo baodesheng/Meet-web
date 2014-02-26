@@ -13,7 +13,7 @@ var ejs = require("ejs");
 
 var MIME = require("../Config/constant").MIME;
 
-var WebRootPath = "./WebRoot";
+var WebRootPath = __dirname + "/../WebRoot";
 var WebHost_WORK = "meet.liba.com";
 
 function start(request, response) {
