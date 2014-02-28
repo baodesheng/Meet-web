@@ -104,16 +104,21 @@
 <div class="ui-footer">
 	<img src="images/mark.png" width="72" height="72" alt="生活纪录片"/>
 	生活纪录片<br />记录一段故事
+
+	<% if (isIOS) { %>
 	<div class="badge-ios">
 		<a href="https://itunes.apple.com/cn/app/sheng-huo-ji-lu-pian-ji-lu/id590218307?mt=8">
 			<img alt="Get it on App Store" src="https://devimages.apple.com.edgekey.net/app-store/marketing/guidelines/images/badge-download-on-the-app-store-cn.svg" />
 		</a>
 	</div>
+	<% } else { %>
 	<div class="badge-android">
 		<a href="https://play.google.com/store/apps/details?id=com.liba.android.meet">
 	  		<img alt="Get it on Google Play" src="https://developer.android.com/images/brand/zh-cn_generic_rgb_wo_45.png" />
 		</a>
 	</div>
+	<% } %>
+
 </div>
 </body>
 </html>

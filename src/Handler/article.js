@@ -83,6 +83,8 @@ function show(request, response) {
             var articleNext = function(msg, rs) {
                 console.log("get article msg:"+msg);
                 if (MESSAGE.SUCCESS == msg) {
+                    loadData.isIOS = isIOS(request.headers['user-agent']);
+
                     if (rs && rs instanceof Array && rs.length > 0) {
                         console.log("article rs:"+rs.length);
                         var article = rs[0];
@@ -136,6 +138,13 @@ function show(request, response) {
         }
         Handler.preHandleGetReq(request, response, main);
     }
+}
+
+function isIOS(agent) {
+    console.log(agent);
+
+    var matches = agent.match(/(mac|iphone|ipad)/ig);
+    return (matches && matches.length > 0);
 }
 
 exports.show = show;
