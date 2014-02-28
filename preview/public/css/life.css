@@ -40,7 +40,7 @@ img,object{max-width:100%}
 .ui-doc-param-author{font-size:14px}
 .ui-doc-text{padding:0 20px 19px 20px}
 
-.ui-footer{margin:24px auto 20px auto;border-top:1px solid #D6D6D6;width:99px;text-align:center;font-size: 12px;
+.ui-footer{margin:24px auto 20px auto;border-top:1px solid #D6D6D6;width:100%;text-align:center;font-size: 12px;
 }
 .ui-footer img{display:block;margin:0 auto;padding:20px 9px 7px 9px;
 }
@@ -48,7 +48,17 @@ img,object{max-width:100%}
 	height: 240px;
 	margin-bottom: 20px;
 }
-
+.badge-ios a,.badge-android a{
+	display: block;
+}
+.badge-ios{
+	width: 153px;
+	margin: 0 auto;
+}
+.badge-android{
+	width: 147px;
+	margin: 0 auto;
+}
 @media all and (min-width: 800px) {
 	.ui-doc-param{top: 0;width: 100%;height: 240px;padding-top: 40px;background-color: rgba(0, 0, 0, 0.36);}
 	.ui-doc-img{border:0}
