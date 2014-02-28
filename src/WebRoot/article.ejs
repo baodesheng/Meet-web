@@ -22,6 +22,9 @@
 	</script>
 </head>
 <body>
+<div class="tip-weixin" style="display: none;">
+	点击右上角图标，选择「在Safari中打开」即可
+</div>
 <ul class="ui-list">
     <%
     var numReg = /\-\d+/g;
@@ -159,6 +162,11 @@
 	</script>
 </div>
 <% } %>
+<script>
+$( ".sd-point" ).click(function() {
+  $( ".tip-weixin" ).show( "" );
+});
+</script>
 </body>
 </html>
 
