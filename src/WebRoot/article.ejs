@@ -145,13 +145,23 @@
 <% } else { %>
 <div id="smartAd" class="smartad">
 	<a id="smartAd-close" class="sd-close" href="#"></a>
-	<a id="smartAd-open" class="sd-point" href="meet://meet.liba.com/share?id=<%=creamData.topicId%>">
+	<a onClick="javascript:try_to_open_app();" id="smartAd-open" class="sd-point" href="meet://meet.liba.com/share?id=<%=creamData.topicId%>">
 	<p class="sd-font">
 		<b class="sd-meet"></b>
 		<span>生活纪录片-记录一段故事</span>
 		<b class="sd-dl" style="">立即打开</b>
 	</p>
 	</a>
+	<script language="javascript">
+	var timeout;
+	function open_appstore() {
+	window.location='com.liba.android.meet';
+	}
+	 
+	function try_to_open_app() {
+	timeout = setTimeout('open_appstore()', 300);
+	}
+	</script>
 </div>
 <% } %>
 </body>
