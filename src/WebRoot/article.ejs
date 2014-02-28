@@ -124,13 +124,23 @@
 <% if (isIOS) { %>
 <div id="smartAd" class="smartad">
 	<a id="smartAd-close" class="sd-close" href="#"></a>
-	<a id="smartAd-open" class="sd-point" href="wx7d3783dc372514df://<%=creamData.topicId%>">
+	<a onClick="javascript:try_to_open_app();" id="smartAd-open" class="sd-point" href="wx7d3783dc372514df://<%=creamData.topicId%>">
 	<p class="sd-font">
 		<b class="sd-meet"></b>
 		<span>生活纪录片-记录一段故事</span>
 		<b class="sd-dl" style="">立即打开</b>
 	</p>
 	</a>
+	<script language="javascript">
+	var timeout;
+	function open_appstore() {
+	window.location='https://itunes.apple.com/cn/app/sheng-huo-ji-lu-pian-ji-lu/id590218307?mt=8';
+	}
+	 
+	function try_to_open_app() {
+	timeout = setTimeout('open_appstore()', 300);
+	}
+	</script>
 </div>
 <% } else { %>
 <div id="smartAd" class="smartad">
