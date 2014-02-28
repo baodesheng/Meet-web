@@ -122,7 +122,10 @@ img,object{max-width:100%}
 	font-weight: normal;
 }
 .tip-weixin{
-	padding: 5px;
+	position: fixed;
+	padding: 5px 2%;
+	z-index: 999;
+	width: 96%;
 	background-color: rgba(66,66,74,0.96);
 	color: white;
 	text-align: right;
