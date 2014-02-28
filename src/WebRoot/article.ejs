@@ -153,14 +153,10 @@
 	</a>
 	<script language="javascript">
 	function try_to_open_app(){
-	setTimeout("myappDownload()",3000);
 	window.location.href="meet://meet.liba.com/share?id=<%=creamData.topicId%>";
 //	alert("cccccc");
-	window.open("market://com.liba.android.meet");
-	}
-	function myappDownload(){
-		alert("dddd");
-	    window.location.href="http://meet.liba.com";
+	window.open("market://detail?id=com.liba.android.meet");
+	window.location.href="http://meet.liba.com/show?topicId=<%=creamData.topicId%>";
 	}
 	</script>
 </div>
