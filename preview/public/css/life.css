@@ -128,7 +128,7 @@ img,object{max-width:100%}
 	text-align: right;
 	font-size: 12px;
 }
-@media all and (min-width: 1024px) {
+@media all and (min-width: 1025px) {
 	.ui-doc-param{top: 0;width: 100%;height: 240px;padding-top: 40px;background-color: rgba(0, 0, 0, 0.36);}
 	.ui-doc-img{border:0}
 	.smartad{display: none;}
