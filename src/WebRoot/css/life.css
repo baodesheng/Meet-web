@@ -40,7 +40,9 @@ img,object{max-width:100%}
 .ui-doc-param-author{font-size:14px}
 .ui-doc-text{padding:0 20px 19px 20px}
 
-.ui-footer{margin:24px auto 20px auto;border-top:1px solid #D6D6D6;width:60%;text-align:center;font-size: 12px;
+.ui-footer{display: none;}
+.ui-footer-mobile{
+	margin-bottom: 70px;
 }
 .ui-footer img{display:block;margin:0 auto;padding:20px 9px 7px 9px;
 }
@@ -59,8 +61,71 @@ img,object{max-width:100%}
 	width: 147px;
 	margin: 0 auto;
 }
-@media all and (min-width: 800px) {
+.smartad{
+	background-color: rgba(66,66,74,0.96);
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	height: 68px;
+	width: 100%;
+	font-size: 1rem;
+	z-index: 1000;
+	font-size: 14px;
+}
+.sd-close{
+	background: url('../images/close.png') no-repeat;
+	background-size: 18px;
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 10;
+}
+.sd-point{
+	color: #fff;
+	display: block;
+	text-decoration: none;
+	height: 100%;
+}
+.sd-font{
+	margin: 0;
+	padding: 20px 8px 0 8px;
+	display: -webkit-box;
+	height: 32px;
+	overflow: hidden;
+	-webkit-box-align: center;
+}
+.sd-meet{
+	background: url('../images/mark.png') no-repeat;
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	background-size: contain;
+	vertical-align: top;
+}
+.sd-font>span{
+	-webkit-box-flex: 1;
+	display: block;
+	margin: 0 12px;
+	line-height: 120%;
+}
+.sd-dl{
+	display: block;
+	color: #3d4245;
+	background-color: #e5e5e5;
+	border-radius: 5px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	padding: 0 12px;
+	font-weight: normal;
+}
+@media all and (min-width: 1024px) {
 	.ui-doc-param{top: 0;width: 100%;height: 240px;padding-top: 40px;background-color: rgba(0, 0, 0, 0.36);}
 	.ui-doc-img{border:0}
-	.ui-footer{width: 40%;}
+	.smartad{display: none;}
+	.ui-footer{display: block;margin:24px auto 80px auto;border-top:1px solid #D6D6D6;width:40%;text-align:center;font-size: 12px;}
+	.ui-footer img{display:block;margin:0 auto;padding:20px 9px 7px 9px;}
+	.ui-footer-mobile{display: none;}
 }

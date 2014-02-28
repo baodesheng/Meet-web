@@ -120,6 +120,35 @@
 	<% } %>
 
 </div>
+
+<!--iOS 设备显示-->
+<% if (isIOS) { %>
+<div id="smartAd" class="smartad">
+	<a id="smartAd-close" class="sd-close" href="#"></a>
+	<a id="smartAd-open" class="sd-point" href="#">
+	<p class="sd-font">
+		<b class="sd-meet"></b>
+		<span>生活纪录片-记录一段故事</span>
+		<b class="sd-dl" style="">立即打开</b>
+	</p>
+	</a>
+</div>
+<!--iOS 设备显示-->
+
+<!--android 设备显示-->
+<% } else { %>
+<div id="smartAd" class="smartad">
+	<a id="smartAd-close" class="sd-close" href="#"></a>
+	<a id="smartAd-open" class="sd-point" href="#">
+	<p class="sd-font">
+		<b class="sd-meet"></b>
+		<span>生活纪录片-记录一段故事</span>
+		<b class="sd-dl" style="">立即打开android</b>
+	</p>
+	</a>
+</div>
+<!--android 设备显示-->
+<% } %>
 </body>
 </html>
 
