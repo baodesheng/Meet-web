@@ -179,7 +179,8 @@
 <!--android 设备显示-->
 <script>
 $( ".sd-point" ).click(function() {
-  $( ".tip-weixin" ).show( "" );
+  $(".tip-weixin").show("fast");
+  $(".tip-weixin").delay(6000).hide("slow");
 });
 </script>
 </body>

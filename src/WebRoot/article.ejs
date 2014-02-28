@@ -163,8 +163,9 @@
 </div>
 <% } %>
 <script>
-$( ".sd-point" ).click(function() {
-  $( ".tip-weixin" ).show( "" );
+$(".sd-point").click(function() {
+  $(".tip-weixin").show("fast");
+  $(".tip-weixin").delay(6000).hide("slow");
 });
 </script>
 </body>
