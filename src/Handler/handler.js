@@ -15,6 +15,7 @@ var WebUtil = require("../Util/web");
 var Session = require("./session");
 var Record = require("./record");
 var Article = require("./article");
+var Invite = require('./invite');
 
 // ----------- 登录 ------------
 
@@ -24,7 +25,8 @@ exports.NoLoginHandler = {
     "/login": Session.login,                        //  登录
     "/show": Article.show,                           //  展示文章
     "/showObject": Record.showObject,               //  OBJECT方式展示文章
-    "/article": Record.show
+    "/article": Record.show,
+    "/invite": Invite.invite
 };
 
 //  需要登录的

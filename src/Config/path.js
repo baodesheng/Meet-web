@@ -33,5 +33,6 @@ exports.EJS = {
     LOGIN: "login",
     SHOW: "show",
     SHOW_OBJECT: "show_object",
-    ARTICLE: 'article'
+    ARTICLE: 'article',
+    INVITE: 'invite'
 };

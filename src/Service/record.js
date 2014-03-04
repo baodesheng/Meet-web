@@ -14,6 +14,7 @@ var TABLE_NAME_CREAM = "liba_cream";
 var TABLE_NAME_SECTION = "cream_section";
 var TABLE_NAME_ITEM = "section_item";
 var TABLE_NAME_LR_ARTICLE = "lr_article";
+var TABLE_NAME_LR_SHARECODE = 'lr_sharecode';
 
 function getCreamByTopicId(params, next) {
     var sql = "select id, author, title, image, type, topic_id, DATE_FORMAT(update_time,'%Y.%m.%d') as publish_time from " + TABLE_NAME_CREAM ;
@@ -76,6 +77,19 @@ function getArticleById(params, next) {
         sql += " and status<>4 ";
     }
     console.log("getArticleById:"+sql);
+    DBUtil.select(sql, next);
+}
+
+exports.getArticleShareCode = function(code, next) {
+    var now = new Date();
+    var timeLimit = now.getFullYear() + '-' + (now.getMonth() + 1) + '-' + now.getDate() + ' '
+                  + now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds();
+    var sql = "SELECT * FROM " + TABLE_NAME_LR_SHARECODE + " "
+            + "WHERE code='" + code + "' "
+            + "AND status=0 "
+            + "AND expire_time>'" + timeLimit + "' LIMIT 1";
+
+    console.log('getArticleShareCode: ' + sql);
     DBUtil.select(sql, next);
 }
 

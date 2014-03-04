@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Pragma" content="no-cache"/>
+	<meta http-equiv="no-cache"/>
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="viewport" content="user-scalable=yes,width=device-width, initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-itunes-app" content="app-id=590218307"/>
+	<title>生活纪录片</title>
+	<style>
+	    html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+		html{background-color:#F5F4F1}
+		body{overflow-x:hidden;font-family:Arial,\5b8b\4f53;line-height:1.5;color:#757575}
+		body{
+			max-width: 320px;
+			margin: 0 auto;
+		}
+		.cover{
+			width: 100%;
+			height: 240px;
+			position: relative;
+			overflow: hidden;
+			background-color: rgb(0, 0, 0);
+		}
+		.cover .coverimg{
+			opacity: 0.5;
+		}
+		.face{
+			position: absolute;
+			display: block;
+			width: 48px;
+			height: 48px;
+			top: 30px;
+			left: 136px;
+		}
+		.face img{
+			border-radius: 100px;
+		}
+		.info-a{
+			position: absolute;
+			width: 300px;
+			padding-left: 10px;
+			top: 95px;
+			color: white;
+			text-align: center;
+			font-size: 12px;
+		}
+		.username{
+			padding: 0 5px;
+		}
+		.info-b{
+			position: absolute;
+			width: 300px;
+			padding-left: 10px;
+			text-align: center;
+			top: 120px;
+			color: white;
+			font-size: 19px;
+		}
+		.info-c{
+			position: absolute;
+			width: 300px;
+			padding-left: 10px;
+			text-align: center;
+			top: 175px;
+			color: white;
+			font-size: 12px;
+		}
+		.info-c code{
+			font-size: 29px;
+		}
+		.help{
+			line-height: 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="cover">
+		<img src="<%- article.image %>" width="320" alt="封面" class="coverimg" />
+		<span class="face">
+			<img src="<%- article.avatar %>" width="48" alt="" />
+		</span>
+		<p class="info-a"><span class="username"><%- article.author %></span>给你共享了纪录片</p>
+		<p class="info-b"><%- article.title %></p>
+		<p class="info-c">邀请码<br /><code><%- code %></code></p>
+	</div>
+	<div class="help">
+		<img src="images/invite/a.png" width="320" alt="" />
+		<img src="images/invite/b.png" width="320" alt="" />
+		<img src="images/invite/c.png" width="320" alt="" />
+		<img src="images/invite/d.png" width="320" alt="" />
+	</div>
+</body>
+</html>
