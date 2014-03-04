@@ -7,7 +7,6 @@
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="viewport" content="user-scalable=yes,width=device-width, initial-scale=1.0">
 	<meta name="format-detection" content="telephone=no">
-	<meta name="apple-itunes-app" content="app-id=590218307"/>
 	<title>生活纪录片</title>
 	<link href="css/life.css" rel="stylesheet" type="text/css"/>
 	<link href="css/emoji.css" rel="stylesheet"/>
@@ -22,6 +21,15 @@
 	</script>
 </head>
 <body>
+<% if (isIOS) { %>
+<div class="tip-weixin" style="display: none;">
+	点击右上角图标，选择「在Safari中打开」即可
+</div>
+<% } else { %>
+<div class="tip-weixin" style="display: none;">
+	点击右上角图标，选择「在浏览器中打开」即可
+</div>
+<% } %>
 <ul class="ui-list">
     <%
     var numReg = /\-\d+/g;
@@ -104,22 +112,62 @@
 <div class="ui-footer">
 	<img src="images/mark.png" width="72" height="72" alt="生活纪录片"/>
 	生活纪录片<br />记录一段故事
-
-	<% if (isIOS) { %>
 	<div class="badge-ios">
 		<a href="https://itunes.apple.com/cn/app/sheng-huo-ji-lu-pian-ji-lu/id590218307?mt=8">
 			<img alt="Get it on App Store" src="https://devimages.apple.com.edgekey.net/app-store/marketing/guidelines/images/badge-download-on-the-app-store-cn.svg" />
 		</a>
 	</div>
-	<% } else { %>
 	<div class="badge-android">
 		<a href="https://play.google.com/store/apps/details?id=com.liba.android.meet">
 	  		<img alt="Get it on Google Play" src="https://developer.android.com/images/brand/zh-cn_generic_rgb_wo_45.png" />
 		</a>
 	</div>
-	<% } %>
-
 </div>
+<div class="ui-footer-mobile"> </div>
+<% if (isIOS) { %>
+<div id="smartAd" class="smartad">
+	<a id="smartAd-close" class="sd-close" href="#"></a>
+	<a onClick="javascript:try_to_open_app();" id="smartAd-open" class="sd-point" href="wx7d3783dc372514df://<%=creamData.topicId%>">
+	<p class="sd-font">
+		<b class="sd-meet"></b>
+		<span>生活纪录片-记录一段故事</span>
+		<b class="sd-dl" style="">立即打开</b>
+	</p>
+	</a>
+	<script language="javascript">
+	var timeout;
+	function open_appstore() {
+	window.location='https://itunes.apple.com/cn/app/sheng-huo-ji-lu-pian-ji-lu/id590218307?mt=8';
+	}
+	 
+	function try_to_open_app() {
+	timeout = setTimeout('open_appstore()', 300);
+	}
+	</script>
+</div>
+<% } else { %>
+<div id="smartAd" class="smartad">
+	<a onClick="javascript:try_to_open_app();" id="smartAd-open" class="sd-point" href="meet://meet.liba.com/share?id=<%=creamData.topicId%>">
+	<p class="sd-font">
+		<b class="sd-meet"></b>
+		<span>生活纪录片-记录一段故事</span>
+		<b class="sd-dl" style="">立即打开</b>
+	</p>
+	</a>
+	<script language="javascript">
+	function try_to_open_app(){
+	window.location.href="http://meet.liba.com/show?topicId=<%=creamData.topicId%>";
+	window.open("market://details?id=com.liba.android.meet");
+	}
+	</script>
+</div>
+<% } %>
+<script>
+$(".sd-point").click(function() {
+  $(".tip-weixin").show("fast");
+  $(".tip-weixin").delay(6000).hide("slow");
+});
+</script>
 </body>
 </html>
 

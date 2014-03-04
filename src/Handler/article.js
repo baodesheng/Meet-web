@@ -89,6 +89,7 @@ function show(request, response) {
                         console.log("article rs:"+rs.length);
                         var article = rs[0];
                         loadData.creamData = {
+                            topicId: article.id,
                             author: article.author,
                             title: article.title,
                             image: article.image,
