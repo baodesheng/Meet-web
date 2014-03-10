@@ -1,0 +1,66 @@
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+html{background-color:#f8f8f8}
+body{overflow-x:hidden;font-family:Arial,\5b8b\4f53;line-height:1.5;color:#757575}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+nav ul{list-style:none}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{content:none}
+a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent;color:#333;text-decoration:none}
+ins{background-color:#FF9;color:#000;text-decoration:none}
+mark{background-color:#FF9;color:#000;font-style:italic;font-weight:bold}
+del{text-decoration:line-through}
+abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}
+table{border-collapse:collapse;border-spacing:0}
+hr{display:block;height:1px;border:0;border-top:1px solid #CCC;margin:1em 0;padding:0}
+input,select{vertical-align:middle}
+input,select,textarea{color:#444;font-size:14px;line-height:19px}
+textarea{resize:none}
+input::-webkit-input-placeholder{color:#B0B0B0}
+h1{color:#444}
+img,object{max-width:100%}
+
+.ui-meet{
+	width: 100%;
+	height: 620px;
+	margin: 0 auto;
+	background-color: rgb(242, 241, 237);
+}
+.ui-meet-logo{
+	width: 140px;
+	margin: 0 auto;
+}
+.download{
+	width: 430px;
+	margin: 0 auto;
+}
+.download a{
+	display: block;
+	padding: 0;
+	float: left;
+}
+.download .android{
+	margin-left: 30px;
+}
+.ui-a{
+	width: 100%;
+	height: 535px;
+	background-image: url(../images/ui-line.png);
+	background-position: top right;
+	background-repeat: repeat-x;
+}
+.ui-a-content,.ui-b-content{
+	width: 1000px;
+	margin: 0 auto;
+}
+.ui-line{
+	width: 100%;
+	height: 4px;
+	margin: 0 auto;
+}
+.ui-b{
+	width: 100%;
+	height: 535px;
+	background-image: url(../images/ui-b-line.png);
+	background-position: top left;
+	background-repeat: repeat-x;
+}
