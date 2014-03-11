@@ -38,6 +38,9 @@ img,object{max-width:100%}
 	padding: 0 0 10px;
 }
 @media all and (min-width: 1025px) {
+	.ui-meet{
+		height: 620px;
+	}
 	.download{
 		width: 430px;
 		margin: 0 auto;
