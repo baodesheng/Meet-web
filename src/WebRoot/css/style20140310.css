@@ -79,3 +79,48 @@ img,object{max-width:100%}
 	}	
 
 }
+
+/*印刷活动*/
+#print{
+	width: 320px;
+	margin: 0 auto;
+}
+#print .cover{
+	width: 320px;
+	height: 240px;
+	background-image: url(../images/cover.png);
+	background-size: 320px 240px;
+}
+.del{
+	width: 300px;
+	margin: 20px auto 0;
+}
+.del h3{
+	width: 100%;
+	height: 48px;
+	line-height: 48px;
+	text-align: center;
+	font-size: 16px;
+	border: 1px solid #c7c7c7;
+	border-bottom: none;
+}
+.del .desppp{
+	width: 100%;
+	border: 1px solid #c7c7c7;
+	background-color: #f1f0ec;
+}
+.del .desppp p{
+	padding: 9px;
+}
+.del .desppp input,.del .desppp button{
+	width: 272px;
+	margin: 2px 0 0 10px;
+}
+.del .desppp button{
+	height: 44px;
+	border: none;
+	background-color: #fd5021;
+	color: white;
+	font-size: 16px;
+	width: 278px;
+}
