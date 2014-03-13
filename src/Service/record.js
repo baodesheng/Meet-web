@@ -15,6 +15,7 @@ var TABLE_NAME_SECTION = "cream_section";
 var TABLE_NAME_ITEM = "section_item";
 var TABLE_NAME_LR_ARTICLE = "lr_article";
 var TABLE_NAME_LR_SHARECODE = 'lr_sharecode';
+var TABLE_NAME_LR_PRINT = 'lr_activity_print';
 
 function getCreamByTopicId(params, next) {
     var sql = "select id, author, title, image, type, topic_id, DATE_FORMAT(update_time,'%Y.%m.%d') as publish_time from " + TABLE_NAME_CREAM ;
@@ -93,6 +94,23 @@ exports.getArticleShareCode = function(code, next) {
     DBUtil.select(sql, next);
 }
 
+/**
+ * 新增打印活动报名信息
+ * @param params
+ * @param next
+ */
+function addPrintInfo(params, next) {
+    var rowData = {
+        user_name: params.userName,
+        record_name: params.recordName,
+        real_name: params.realName,
+        address: params.address,
+        tel: params.tel,
+        update_time: new Date()
+    };
+    DBUtil.insert(TABLE_NAME_LR_PRINT, rowData, next);
+}
+
 exports.getCreamByTopicId = getCreamByTopicId;
 exports.getSectionByCreamId = getSectionByCreamId;
 exports.getItemBySectionId = getItemBySectionId;
@@ -100,3 +118,5 @@ exports.getItemByCreamId = getItemByCreamId;
 exports.getArticleById = getArticleById;
 
 exports.getArticleContentById = getArticleContentById;
+
+exports.addPrintInfo = addPrintInfo;

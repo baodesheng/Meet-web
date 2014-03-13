@@ -204,5 +204,39 @@ function showObject(request, response) {
     }
 }
 
+/**
+ * 打印活动
+ * @param request
+ * @param response
+ */
+function print(request, response) {
+    var reqMethod = request.method;
+    // GET
+    if ("GET" == reqMethod) {
+        Handler.fail(response, HTTP_CODE.ERROR_PARAM, Result.make(RS_CODE.FAIL, MESSAGE.ERROR_PARAM));
+    }
+    // POST
+    else if ("POST" == reqMethod) {
+        var main = function(queryParams) {
+            var next = function(msg, rs){
+                if (MESSAGE.SUCCESS == msg) {
+                    Handler.success(response, HTTP_CODE.SUCCESS, Result.make(RS_CODE.SUCCESS, MESSAGE.SUCCESS));
+                } else {
+                    Handler.fail(response, HTTP_CODE.ERROR_SERVER, Result.make(RS_CODE.FAIL, MESSAGE.ERROR_SERVER));
+                }
+            };
+
+            //
+            if (queryParams.userName && queryParams.recordName && queryParams.realName && queryParams.address && queryParams.tel) {
+                Record.addPrintInfo(queryParams, next);
+            } else {
+                Handler.fail(response, HTTP_CODE.ERROR_PARAM, Result.make(RS_CODE.FAIL, MESSAGE.ERROR_PARAM));
+            }
+        };
+        Handler.preHandlePostReq(request, response, main);
+    }
+}
+
 exports.show = show;
 exports.showObject = showObject;
+exports.print = print;

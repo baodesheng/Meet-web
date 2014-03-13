@@ -6,6 +6,50 @@
 	<title>拥有一本特别的故事书-生活纪录片-记录一段故事</title>
 	<link rel="stylesheet" href="css/style20140310.css" />
 </head>
+<script type="text/javascript">
+    function focusFunc(e) {
+        if (!e.getAttribute("notEmpty")) {
+            e.value = "";
+        }
+    }
+
+    function blurFunc(e) {
+        if (!e.value) {
+            e.value = e.getAttribute("default");
+        } else {
+            e.setAttribute("notEmpty", "1");
+        }
+    }
+
+    function submitFunc() {
+        if (!document.recordForm.userName || !document.recordForm.userName.getAttribute("notEmpty")) {
+            alert("生活纪录片用户名不能为空");
+            document.recordForm.userName.focus();
+            return false;
+        }
+        if (!document.recordForm.recordName || !document.recordForm.recordName.getAttribute("notEmpty")) {
+            alert("纪录片名称");
+            document.recordForm.recordName.focus();
+            return false;
+        }
+        if (!document.recordForm.realName || !document.recordForm.realName.getAttribute("notEmpty")) {
+            alert("真实姓名");
+            document.recordForm.realName.focus();
+            return false;
+        }
+        if (!document.recordForm.address || !document.recordForm.address.getAttribute("notEmpty")) {
+            alert("寄送地址");
+            document.recordForm.address.focus();
+            return false;
+        }
+        if (!document.recordForm.tel || !document.recordForm.tel.getAttribute("notEmpty")) {
+            alert("联系电话");
+            document.recordForm.tel.focus();
+            return false;
+        }
+        return true;
+    }
+</script>
 <body>
 	<div id="print">
 		<div class="cover"></div>
@@ -23,12 +67,12 @@
 			<div class="desppp">
 				<p>按照以下格式内容填写申请</p>
 				<div>
-					<form method="post" action="">
-						<input type="text" name="" value="生活纪录片用户名" />
-						<input type="text" name="" value="纪录片名称" />
-						<input type="text" name="" value="真实姓名" />
-						<input type="text" name="" value="寄送地址" />
-						<input type="tel" name="" value="联系电话" />
+					<form name="recordForm" method="post" action="/print" onsubmit="return submitFunc()">
+						<input type="text" name="userName" value="生活纪录片用户名" default="生活纪录片用户名" onfocus="focusFunc(this);" onblur="blurFunc(this);"/>
+						<input type="text" name="recordName" value="纪录片名称" default="纪录片名称" onfocus="focusFunc(this);" onblur="blurFunc(this);"/>
+						<input type="text" name="realName" value="真实姓名" default="真实姓名" onfocus="focusFunc(this);" onblur="blurFunc(this);"/>
+						<input type="text" name="address" value="寄送地址" default="寄送地址" onfocus="focusFunc(this);" onblur="blurFunc(this);"/>
+						<input type="tel" name="tel" value="联系电话" default="联系电话" onfocus="focusFunc(this);" onblur="blurFunc(this);"/>
 						<button>提交</button>
 					</form>
 				</div>

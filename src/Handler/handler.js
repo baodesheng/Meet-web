@@ -26,6 +26,7 @@ exports.NoLoginHandler = {
     "/show": Article.show,                           //  展示文章
     "/showObject": Record.showObject,               //  OBJECT方式展示文章
     "/article": Record.show,
+    "/print": Record.print,
     "/invite": Invite.invite
 };
 
