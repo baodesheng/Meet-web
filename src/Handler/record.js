@@ -7,6 +7,7 @@
  */
 
 var Handler = require("./handler");
+var HTTP_CODE = require("../Config/constant").HTTP_CODE;
 var MESSAGE = require("../Config/constant").MESSAGE;
 var EJS = require("../Config/path").EJS;
 var STATIC = require("../Config/path").STATIC;
@@ -220,7 +221,7 @@ function print(request, response) {
         var main = function(queryParams) {
             var next = function(msg, rs){
                 if (MESSAGE.SUCCESS == msg) {
-                    Handler.success(response, HTTP_CODE.SUCCESS, Result.make(RS_CODE.SUCCESS, MESSAGE.SUCCESS));
+                    WebUtil.redirect(STATIC.PRINT_SUCCESS, request, response);
                 } else {
                     Handler.fail(response, HTTP_CODE.ERROR_SERVER, Result.make(RS_CODE.FAIL, MESSAGE.ERROR_SERVER));
                 }

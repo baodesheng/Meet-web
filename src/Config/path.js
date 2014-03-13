@@ -14,7 +14,8 @@ exports.STATIC = {
     NO_PERMISSION: "/403.html",
     NOT_FOUND: "/404.html",
     ERROR_SERVER: "/500.html",
-    INDEX: "/index.html"
+    INDEX: "/index.html",
+    PRINT_SUCCESS: "/print-ok.html"
 };
 
 /**
