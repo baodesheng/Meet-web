@@ -91,6 +91,28 @@ img,object{max-width:100%}
 	background-image: url(../images/cover.png);
 	background-size: 320px 240px;
 }
+h2{
+	width: 100%;
+	margin: 0 auto;
+	background-image: url(../images/icon-ok.png);
+	background-size: 50px 50px;
+	background-repeat: no-repeat;
+	background-position: center;
+	text-align: center;
+	padding-top: 80px;
+}
+hr{
+	border: none;
+	border-bottom: 1px dashed #eee;
+}
+.tip{
+	text-align: center;
+}
+.tip b{
+	font-size: 150%;
+	color: #f60;
+	font-weight: 400;
+}
 .del{
 	width: 300px;
 	margin: 20px auto 0;
