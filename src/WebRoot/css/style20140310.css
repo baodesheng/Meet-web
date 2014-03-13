@@ -134,8 +134,16 @@ hr{
 .del .desppp p{
 	padding: 9px;
 }
+.del .desppp input{
+	border: 1px solid #ccc;
+	height: 30px;
+	padding: 5px;
+}
+.c{
+	text-align: center;
+}
 .del .desppp input,.del .desppp button{
-	width: 262px;
+	width: 252px;
 	margin: 2px 0 0 10px;
 }
 .del .desppp button{
@@ -145,4 +153,6 @@ hr{
 	color: white;
 	font-size: 16px;
 	width: 278px;
+	border-radius: 5px;
+	margin-top: 5px;
 }
