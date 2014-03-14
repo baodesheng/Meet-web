@@ -83,7 +83,7 @@ img,object{max-width:100%}
 /*印刷活动*/
 #print{
 	width: 320px;
-	margin: 0 auto;
+	margin: 0 auto 44px;
 }
 #print .cover{
 	width: 320px;
