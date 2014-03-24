@@ -15,6 +15,7 @@ var WebUtil = require("../Util/web");
 var AvatarUtil = require("../Util/Avatar");
 var Record = require("../Service/record");
 var User = require("../V3/user");
+var Result = require('../Util/Result');
 
 /**
  * 展示文章
