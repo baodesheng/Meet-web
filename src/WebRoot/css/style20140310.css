@@ -156,5 +156,6 @@ hr{
 	border-radius: 5px;
 	margin-top: 5px;
 }
-.ui-footer{display: block;margin:24px auto 80px auto;border-top:1px solid #D6D6D6;width:40%;text-align:center;font-size: 12px;}
+.ui-footer{display: block;margin:24px auto 80px auto;width:40%;text-align:center;font-size: 12px;}
+.ui-footer h1{font-size:150%;}
 .ui-footer img{display:block;margin:0 auto;padding:20px 9px 7px 9px;}
