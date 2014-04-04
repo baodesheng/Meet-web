@@ -41,7 +41,7 @@ exports.show = function(request, response) {
                                 loadData.itemData = contentArr;
 
                                 console.log("load article content ");
-                                WebUtil.loadPage(EJS.ARTICLE, loadData, response);
+                                WebUtil.loadPage(EJS.MEET, loadData, response);
                             } else {
                                 WebUtil.redirect(STATIC.NOT_FOUND, request, response);
                             }
