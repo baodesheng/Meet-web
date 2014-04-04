@@ -35,5 +35,6 @@ exports.EJS = {
     SHOW: "show",
     SHOW_OBJECT: "show_object",
     ARTICLE: 'article',
-    INVITE: 'invite'
+    INVITE: 'invite',
+    MEET: 'meet'
 };

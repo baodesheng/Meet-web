@@ -1,0 +1,96 @@
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+html{background-color:#F5F4F1}
+body{overflow-x:hidden;font-family:Arial,\5b8b\4f53;line-height:1.5;color:#757575}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+nav ul{list-style:none}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{content:none}
+a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent;color:#333;text-decoration:none}
+ins{background-color:#FF9;color:#000;text-decoration:none}
+mark{background-color:#FF9;color:#000;font-style:italic;font-weight:bold}
+del{text-decoration:line-through}
+abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}
+table{border-collapse:collapse;border-spacing:0}
+hr{display:block;height:1px;border:0;border-top:1px solid #CCC;margin:1em 0;padding:0}
+input,select{vertical-align:middle}
+input,select,textarea{color:#444;font-size:14px;line-height:19px}
+textarea{resize:none}
+html,body{width: 100%;height: 100%;margin: 0;padding: 0}
+body{
+	background-color: black;
+	width: 100%;
+	height: 100%;
+	display: table;
+}
+audio{
+	width: 0;
+	height: 0;
+	padding: 0;
+	margin: 0;
+}
+
+.ui-box{
+	display: none;
+}
+span{line-height: 1.6;text-align: center;padding: 0;margin: 0;display: table-cell;vertical-align: middle;font-size: 150%;color: white;background-image: url(https://cdn0.iconfinder.com/data/icons/vector-basic-tab-bar-icons/48/rotate-64.png);background-position: center 40%;
+background-repeat: no-repeat;
+}
+
+@media (min-width: 568px) { 
+	span{
+		display: none;
+	}
+	.wrapper{
+		width: 100%;
+		display: table;
+	}
+	.ui-box{
+		margin: 0 auto;
+		position: relative;
+		display: block;
+	}
+	.ui-box li img.cover{
+		height: auto;
+	}
+	.ui-box li p.text{
+		position: absolute;
+		text-align: right;
+		color: white;
+		font-size: 150%;
+		right: 0;
+		bottom: 10px;
+		width: 300px;
+		background-color: rgba(0, 0, 0, .75);
+	}
+	.ui-box li p.title,.ui-box li p.date,.ui-box li p.username{
+		position: absolute;
+		text-align: left;
+		color: white;
+		padding-left: 5px;
+	}
+	.ui-box li p.title{
+		font-size: 180%;
+		right: 0;
+		bottom: 50px;
+		width: 300px;
+		background-color: rgba(0, 0, 0, .75);
+	}
+	.ui-box li p.date{
+		font-size: 90%;
+		right: 0;
+		bottom: 30px;
+		width: 300px;
+		background-color: rgba(0, 0, 0, .75);
+	}
+	.ui-box li p.username{
+		font-size: 90%;
+		right: 0;
+		bottom: 10px;
+		width: 300px;
+		background-color: rgba(0, 0, 0, .75);
+	}
+	.ui-box li p.text span{
+		color: white;
+		font-size: 90%;
+	}
+}

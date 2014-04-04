@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>拥有一本特别的故事书-生活纪录片-记录一段故事</title>
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/animate.css" />
+    <link rel="stylesheet" href="assets/responsiveslides.css" />
+    <script src="assets/jquery-1.9.1.min.js"></script>
+    <script src="assets/jquery.lettering.js"></script>
+    <script src="assets/jquery.textillate.js"></script>
+    <script src="assets/responsiveslides.min.js"></script>
+
+    <script>
+        $(function () {
+            $(".rslides").responsiveSlides(
+                    {
+                        speed: 1000
+                    });
+        })
+    </script>
+</head>
+<body>
+<span>横屏自动播放</span>
+<div class="wrapper">
+    <ul class="ui-box rslides">
+        <%
+        var numReg = /\-\d+/g;
+        var emojiReg = /\[EMOJI\-\d+\]/;
+
+        if (creamData.title) {
+            var numString = creamData.title.match(numReg);
+            if (numString) {
+                for (var j=0; j<numString.length; j++) {
+                    creamData.title = creamData.title.replace(emojiReg,"<span class=\"emoji"+numString[j]+" emoji-pic\"></span>");
+                }
+            }
+        }
+        %>
+        <!-- 封面，标题，作者 -->
+        <li>
+            <img src="<%=creamData.image%>" alt="" class="cover">
+            <p class="title"><%- creamData.title %></p>
+            <p class="date"><%=creamData.publish_time%></p>
+            <p class="username"><%- creamData.author %></p>
+        </li>
+        <!-- 封面，标题，作者 -->
+
+        <%
+        for (var i=0; i<itemData.length; i++) {
+            var item = itemData[i];
+
+            if (item.type == 1) { // type [1:section, 2:item]
+                //continue;
+            }
+
+            var itemImgUrl = (item.image_url ? item.image_url : "").trim();//针对精选
+            if (!itemImgUrl) {
+                itemImgUrl = (item.image ? item.image : "").trim();//针对原创
+            }
+
+            if (item.detail) {
+                var numString = item.detail.match(numReg);
+                if (numString) {
+                    for (var j=0; j<numString.length; j++) {
+                        item.detail = item.detail.replace(emojiReg,"<span class='emoji"+numString[j]+" emoji-pic'></span>");
+                    }
+                }
+            }
+
+            var itemDetail;
+            if (itemImgUrl) {
+                itemDetail = (item.detail ? item.detail.replace(/\<br\>/gi,"\r\n") : "");
+            } else if (!numString) {
+                itemDetail = (item.detail ? (item.detail.replace(/^\s+|\s+$/g,"").replace(/\s+/g,"<br>")) : "");
+            } else {
+                itemDetail = item.detail;
+            }
+        %>
+        <li>
+            <% if (itemDetail) { %>
+            <p class="text" data-in-effect="flipInX"><%- itemDetail%></p>
+            <% } %>
+
+            <% if (itemImgUrl) { %>
+            <img src="<%- itemImgUrl %>" alt="">
+            <% } %>
+
+        </li>
+        <% } %>
+
+    </ul>
+</div>
+
+<!-- 自动播放只支持 PC 端 -->
+<audio autoplay loop >
+    <source src="http://background-music.b0.upaiyun.com/Custom.m4a" type="audio/mpeg" />
+</audio>
+
+</body>
+</html>
