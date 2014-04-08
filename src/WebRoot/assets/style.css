@@ -79,15 +79,15 @@ audio{
 		font-size: 150%;
 		color: white;
 	}
-	.switch{
+	.switch a{
 	position: absolute;
 	left: 10px;
 	bottom: 10px;
 	padding: 0 10px;
-	background-color: rgba(0, 0, 0,0.75);
+	background-color: rgba(0, 0, 0,0.65);
 	width: 50px;
 	height: 30px;
-	color: white;
+	color: rgba(255, 255, 255,0.75);
 	z-index: 999;
 	font-size: 12px;
 	text-align: center;
