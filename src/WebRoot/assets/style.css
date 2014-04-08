@@ -39,7 +39,7 @@ audio{
 		color: gray;
 	}
 @media all{
-	.wrapper li{
+	.wrapper {
 		position: relative;
 	}
 	.text{
@@ -64,7 +64,7 @@ audio{
 		color: gray;
 		text-align: right;
 		vertical-align: middle;
-		width: 100%;
+		width: 70%;
 		position: absolute;
 		right: 20px;
 		top: 20px;
@@ -74,10 +74,24 @@ audio{
 		width: 100%;
 		line-height: 1.6;
 		text-align: center;
-		padding: 30px 0 0;
+		padding: 100px 0 0;
 		margin: 0 auto;
 		font-size: 150%;
 		color: white;
+	}
+	.switch{
+	position: absolute;
+	left: 10px;
+	bottom: 10px;
+	padding: 0 10px;
+	background-color: rgba(0, 0, 0,0.75);
+	width: 50px;
+	height: 30px;
+	color: white;
+	z-index: 999;
+	font-size: 12px;
+	text-align: center;
+	line-height: 30px;
 	}
 }
 

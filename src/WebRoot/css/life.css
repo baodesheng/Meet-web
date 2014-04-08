@@ -131,6 +131,20 @@ img,object{max-width:100%}
 	text-align: right;
 	font-size: 12px;
 }
+.switch{
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	padding: 0 10px;
+	background-color: rgba(0, 0, 0,0.75);
+	width: 50px;
+	height: 30px;
+	color: white;
+	z-index: 999;
+	font-size: 12px;
+	text-align: center;
+	line-height: 30px;
+}
 @media all and (min-width: 1025px) {
 	.ui-doc-param{top: 0;width: 100%;height: 240px;padding-top: 40px;background-color: rgba(0, 0, 0, 0.36);}
 	.ui-doc-img{border:0}
