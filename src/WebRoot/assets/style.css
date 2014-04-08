@@ -28,13 +28,17 @@ audio{
 	.wrapper{
 		display: none;
 	}
-	span.h{line-height: 1.6;text-align: center;padding: 0;margin: 0;display: table-cell;vertical-align: middle;font-size: 150%;color: white;background-image: url(https://cdn0.iconfinder.com/data/icons/vector-basic-tab-bar-icons/48/rotate-64.png);background-position: center 40%;
-	background-repeat: no-repeat;
+	span.h{
+		display: block;
+		width: 100%;
+		line-height: 1.6;
+		text-align: center;
+		padding: 50% 0;
+		margin: 0 auto;
+		font-size: 150%;
+		color: gray;
 	}
 @media all{
-	span.h{
-		display: none;
-	}
 	.wrapper li{
 		position: relative;
 	}
