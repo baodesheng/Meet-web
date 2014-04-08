@@ -80,26 +80,26 @@
             }
         %>
         
-        <% if (itemImgUrl) { %>
-       	<li style="background-image: url('<%- itemImgUrl + '!small' %>');">
-       		<% if (itemDetail) { %>
-       			<div class="text" data-in-effect="flipInX"><%- itemDetail%></div>
-       		<% } else { %>
-       			
-       		<% } %>
-		</li>
-        <% } else { %>
+            <% if (itemImgUrl) { %>
+            <li style="background-image: url('<%- itemImgUrl + '!small' %>');">
+                <% if (itemDetail) { %>
+                    <div class="text" data-in-effect="flipInX"><%- itemDetail%></div>
+                <% } else { %>
 
-        	<% if (itemDetail) { %>
-        	<li>
-        		<div class="content" data-in-effect="flipInX"><%- itemDetail%></div>
-        	</li>
-        	<% } else { %>
-        		
-        	<% } %>
+                <% } %>
+            </li>
+            <% } else { %>
+
+                <% if (itemDetail) { %>
+                <li>
+                    <div class="content" data-in-effect="flipInX"><%- itemDetail%></div>
+                </li>
+                <% } else { %>
+
+                <% } %>
+            <% } %>
+
         <% } %>
-        
-
     </ul>
 </div>
 
