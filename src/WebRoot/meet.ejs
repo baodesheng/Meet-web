@@ -13,12 +13,26 @@
     <script src="assets/responsiveslides.min.js"></script>
 
     <script>
-        $(function () {
-            $(".rslides").responsiveSlides(
-                    {
-                        speed: 1000
-                    });
-        })
+    	$(function () {
+    		$(".rslides").responsiveSlides(
+    			{ 
+    			
+    			speed: 3000,
+    			fade: 0,
+    		
+    		});
+    		
+    	    $('.text').textillate({ 
+    	    initialDelay: 2000,
+    	    in: { effect: 'flipInX' 
+    	    }
+    	   });
+    	   $('.content').textillate({ 
+    	    initialDelay: 2000,
+    	    in: { effect: 'flipInX' 
+    	    }
+    	   });   	   
+    	})
     </script>
 </head>
 <body>
