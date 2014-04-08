@@ -43,9 +43,8 @@ audio{
 		padding: 10px;
 		color: white;
 		position: absolute;
-		left: 0;
-		bottom: 0;
 		width: 100%;
+		text-align: right;
 	}
 	.text h3{
 		font-size: 200%;
@@ -58,10 +57,12 @@ audio{
 	.content{
 		font-size: 120%;
 		color: gray;
-		text-align: center;
+		text-align: right;
 		vertical-align: middle;
 		width: 60%;
-		margin: 10% auto 0;
+		position: absolute;
+		right: 10px;
+		top: 10px;
 	}
 
 }
@@ -79,7 +80,10 @@ audio{
 		background-repeat: no-repeat;
 	}
 	.text{
-		height: 60px;
+		width: 150px;
+		height: 320px;
+		right: 0;
+		top: 0;
 	}
 	.text h3{
 		font-size: 100%;
@@ -100,6 +104,13 @@ audio{
 		background-size: cover;
 		background-position-y: 30%;
 	}
+	.text{
+		width: 300px;
+		height: 600px;
+		right: 0;
+		top: 0;
+		overflow: hidden;
+	}
 }
 @media (min-width:1280px) {
 	span.h{
@@ -114,4 +125,12 @@ audio{
 		background-size: cover;
 		background-position-y: 30%;
 	}	
+	.text{
+		width: 300px;
+		height: 768px;
+		right: 0;
+		top: 0;
+		overflow: hidden;
+	}
+	
 }
