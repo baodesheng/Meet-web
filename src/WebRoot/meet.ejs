@@ -39,11 +39,12 @@
         }
         %>
         <!-- 封面，标题，作者 -->
-        <li>
-            <img src="<%=creamData.image%>" alt="" class="cover">
-            <p class="title"><%- creamData.title %></p>
-            <p class="date"><%=creamData.publish_time%></p>
-            <p class="username"><%- creamData.author %></p>
+        <li style="background-image: url('<%=creamData.image%>');">
+            <div class="text">
+            	<h3><%- creamData.title %></h3>
+            	<span class="username"><%- creamData.author %></span>
+            	<span class="date"><%=creamData.publish_time%></span>
+            </div>
         </li>
         <!-- 封面，标题，作者 -->
 
@@ -78,7 +79,7 @@
                 itemDetail = item.detail;
             }
         %>
-        <li>
+        <li style="background-image: url('<%- itemImgUrl + '!small' %>');">
             <% if (itemDetail) { %>
             <p class="text" data-in-effect="flipInX"><%- itemDetail%></p>
             <% } %>
