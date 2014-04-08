@@ -79,17 +79,23 @@
                 itemDetail = item.detail;
             }
         %>
-        <li style="background-image: url('<%- itemImgUrl + '!small' %>');">
-            <% if (itemDetail) { %>
-            <p class="text" data-in-effect="flipInX"><%- itemDetail%></p>
-            <% } %>
-
-            <% if (itemImgUrl) { %>
-            <img src="<%- itemImgUrl + '!small' %>" alt="">
-            <% } %>
-
-        </li>
+        
+        <% if (itemImgUrl) { %>
+       	<li style="background-image: url('<%- itemImgUrl + '!small' %>');">
+       		<% if (itemDetail) { %>
+       			<div class="text" data-in-effect="flipInX"><%- itemDetail%></div>
+       		<% } else { %>
+       			
+       		<% } %>
+       	</li>
+        <% } else { %>
+        	<% if (itemDetail) { %>
+        		<div class="content" data-in-effect="flipInX"><%- itemDetail%></div>
+        	<% } else { %>
+        		
+        	<% } %>
         <% } %>
+        
 
     </ul>
 </div>
