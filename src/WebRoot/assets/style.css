@@ -31,7 +31,7 @@ audio{
 	span.h{line-height: 1.6;text-align: center;padding: 0;margin: 0;display: table-cell;vertical-align: middle;font-size: 150%;color: white;background-image: url(https://cdn0.iconfinder.com/data/icons/vector-basic-tab-bar-icons/48/rotate-64.png);background-position: center 40%;
 	background-repeat: no-repeat;
 	}
-@media (min-width:568px){
+@media all{
 	span.h{
 		display: none;
 	}
@@ -76,8 +76,7 @@ audio{
 	.wrapper li{
 		width: 100%;
 		height: 320px;
-		background-size: cover;
-		background-position-y: 30%;
+		background-repeat: no-repeat;
 	}
 	.text{
 		height: 60px;
