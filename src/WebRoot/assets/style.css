@@ -17,10 +17,7 @@ input,select,textarea{color:#444;font-size:14px;line-height:19px}
 textarea{resize:none}
 html,body{width: 100%;height: 100%;margin: 0;padding: 0}
 body{
-	background-color: black;
-	width: 100%;
-	height: 100%;
-	display: table;
+	background-color: rgb(241, 242, 237);
 }
 audio{
 	width: 0;
@@ -28,69 +25,94 @@ audio{
 	padding: 0;
 	margin: 0;
 }
-
-.ui-box{
-	display: none;
-}
-span{line-height: 1.6;text-align: center;padding: 0;margin: 0;display: table-cell;vertical-align: middle;font-size: 150%;color: white;background-image: url(https://cdn0.iconfinder.com/data/icons/vector-basic-tab-bar-icons/48/rotate-64.png);background-position: center 40%;
-background-repeat: no-repeat;
-}
-
-@media (min-width: 568px) { 
-	span{
+	.wrapper{
 		display: none;
 	}
-	.wrapper{
-		width: 100%;
-		display: table;
+	span.h{line-height: 1.6;text-align: center;padding: 0;margin: 0;display: table-cell;vertical-align: middle;font-size: 150%;color: white;background-image: url(https://cdn0.iconfinder.com/data/icons/vector-basic-tab-bar-icons/48/rotate-64.png);background-position: center 40%;
+	background-repeat: no-repeat;
 	}
-	.ui-box{
-		margin: 0 auto;
+@media (min-width:568px){
+	span.h{
+		display: none;
+	}
+	.wrapper li{
 		position: relative;
+	}
+	.text{
+		background-color: rgba(0, 0, 0, .75);
+		padding: 10px;
+		color: white;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+	}
+	.text h3{
+		font-size: 200%;
+		font-weight: 400;
+	}
+	.text .date,.text .username{
+		display: block;
+		font-size: 90%;
+	}
+	.content{
+		font-size: 120%;
+		color: gray;
+		text-align: center;
+		vertical-align: middle;
+		width: 60%;
+		margin: 10% auto 0;
+	}
+
+}
+
+@media (min-width: 568px) and (max-width:768px){ 
+	span.h{
+		display: none;
+		}
+	.wrapper{
 		display: block;
 	}
-	.ui-box li img.cover{
-		height: auto;
+	.wrapper li{
+		width: 100%;
+		height: 320px;
+		background-size: cover;
+		background-position-y: 30%;
 	}
-	.ui-box li p.text{
-		position: absolute;
-		text-align: right;
-		color: white;
-		font-size: 150%;
-		right: 0;
-		bottom: 10px;
-		width: 300px;
-		background-color: rgba(0, 0, 0, .75);
+	.text{
+		height: 60px;
 	}
-	.ui-box li p.title,.ui-box li p.date,.ui-box li p.username{
-		position: absolute;
-		text-align: left;
-		color: white;
-		padding-left: 5px;
+	.text h3{
+		font-size: 100%;
+		font-weight: 400;
 	}
-	.ui-box li p.title{
-		font-size: 180%;
-		right: 0;
-		bottom: 50px;
-		width: 300px;
-		background-color: rgba(0, 0, 0, .75);
+	
+}
+@media (min-width: 768px) and (max-width:1280px){
+	span.h{
+		display: none;
+		}
+	.wrapper{
+		display: block;
 	}
-	.ui-box li p.date{
-		font-size: 90%;
-		right: 0;
-		bottom: 30px;
-		width: 300px;
-		background-color: rgba(0, 0, 0, .75);
+	.wrapper li{
+		width: 100%;
+		height: 600px;
+		background-size: cover;
+		background-position-y: 30%;
 	}
-	.ui-box li p.username{
-		font-size: 90%;
-		right: 0;
-		bottom: 10px;
-		width: 300px;
-		background-color: rgba(0, 0, 0, .75);
+}
+@media (min-width:1280px) {
+	span.h{
+		display: none;
+		}
+	.wrapper{
+		display: block;
 	}
-	.ui-box li p.text span{
-		color: white;
-		font-size: 90%;
-	}
+	.wrapper li{
+		width: 100%;
+		height: 768px;
+		background-size: cover;
+		background-position-y: 30%;
+	}	
 }
