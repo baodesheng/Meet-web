@@ -131,7 +131,7 @@ img,object{max-width:100%}
 	text-align: right;
 	font-size: 12px;
 }
-.switch{
+.switch a{
 	position: absolute;
 	left: 10px;
 	top: 10px;
@@ -139,7 +139,7 @@ img,object{max-width:100%}
 	background-color: rgba(0, 0, 0,0.75);
 	width: 50px;
 	height: 30px;
-	color: white;
+	color: rgba(255, 255, 255,0.75);
 	z-index: 999;
 	font-size: 12px;
 	text-align: center;
