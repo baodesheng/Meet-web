@@ -79,7 +79,7 @@ audio{
 		height: 320px;
 		background-repeat: no-repeat;
 		background-size: 80% auto;
-		background-position: center center;
+		background-position: 0 center;
 		background-color: black;
 	}
 	.text{
