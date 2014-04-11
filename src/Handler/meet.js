@@ -54,14 +54,14 @@ exports.show = function(request, response) {
                 }
             };
 
-            if (queryParams.id && !isNaN(queryParams.id)) {
+            if (queryParams.topicId && !isNaN(queryParams.topicId)) {
                 if (queryParams.userId && !isNaN(queryParams.userId)) {
                     loadData.userId = queryParams.userId;
                 } else {
                     loadData.userId = 0;
                 }
 
-                queryParams.articleId = Math.abs(queryParams.id);
+                queryParams.articleId = Math.abs(queryParams.topicId);
                 Record.getArticleById(queryParams, next);
             } else {
                 WebUtil.redirect(STATIC.NOT_FOUND, request, response);
