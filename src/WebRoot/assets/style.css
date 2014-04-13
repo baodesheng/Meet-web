@@ -35,8 +35,12 @@ audio{
 		text-align: center;
 		padding: 50% 0;
 		margin: 0 auto;
-		font-size: 150%;
+		font-size: 130%;
 		color: gray;
+		background-image: url(screen.png);
+		background-size: 75px 40px;
+		background-repeat: no-repeat;
+		background-position: center center;
 	}
 @media all{
 	.wrapper {
