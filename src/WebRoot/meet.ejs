@@ -148,11 +148,11 @@
 $(document).ready(function(){  
     //初始化宽度、高度  
     $("li").width($(window).width());  
-    $("li").height($(window).height());  
+    $("li,.text").height($(window).height());  
     //当文档窗口发生改变时 触发  
     $(window).resize(function(){  
         $("li").width($(window).width());  
-        $("li").height($(window).height());  
+        $("li,.text").height($(window).height());  
     })  
     })  
 </script>
