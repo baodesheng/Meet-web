@@ -20,12 +20,12 @@ body{
 	background-color: black;
 }
 audio{
-	width: 0;
-	height: 0;
-	padding: 0;
-	margin: 0;
+	position: absolute;
+	bottom: 10px;
+	right: 0;
+	z-index: 999;
 }
-	.wrapper{
+/*	.wrapper{
 		display: none;
 	}
 	span.h{
@@ -41,63 +41,92 @@ audio{
 		background-size: 75px 40px;
 		background-repeat: no-repeat;
 		background-position: center center;
-	}
-@media all{
-	.wrapper {
-		position: relative;
-	}
+	}*/
+.wrapper {
+	position: relative;
+}
+.text{
+	background-color: rgba(0, 0, 0, .65);
+	color: white;
+	position: absolute;
+	text-align: right;
+	right: 0;
+	top: 0;
+	padding: 20px;
+}
+.text h3{
+	font-size: 200%;
+	font-weight: 400;
+}
+.text .date,.text .username{
+	display: block;
+	font-size: 90%;
+}
+.content{
+	font-size: 120%;
+	color: gray;
+	text-align: right;
+	vertical-align: middle;
+	width: 70%;
+	position: absolute;
+	right: 20px;
+	top: 20px;
+}
+.end{
+	display: block;
+	width: 100%;
+	line-height: 1.6;
+	text-align: center;
+	padding: 100px 0 0;
+	margin: 0 auto;
+	font-size: 150%;
+	color: white;
+}
+.switch a{
+position: absolute;
+left: 10px;
+bottom: 10px;
+padding: 0 10px;
+background-color:rgba(255, 255, 255, 0);
+width: 50px;
+height: 30px;
+color: rgba(255, 255, 255,0.75);
+z-index: 999;
+font-size: 12px;
+text-align: center;
+line-height: 30px;
+}
+@media (max-width:320px) {
 	.text{
-		background-color: rgba(0, 0, 0, .65);
+		background-color: rgba(0, 0, 0, .00);
 		color: white;
 		position: absolute;
-		text-align: right;
-		right: 0;
-		top: 0;
-		padding: 20px;
+		text-align: left;
+		left: 0;
+		bottom: 0;
+		top: 200px;
+		text-shadow: 0px 0px 5px #666;
 	}
-	.text h3{
-		font-size: 200%;
-		font-weight: 400;
-	}
-	.text .date,.text .username{
-		display: block;
-		font-size: 90%;
+	.wrapper li{
+		/*width: 100%;*/
+		/*height: 320px;*/
+		background-repeat: no-repeat;
+		background-size: 100% auto;
+		background-position: top center;
+		background-color: black;
 	}
 	.content{
 		font-size: 120%;
 		color: gray;
-		text-align: right;
+		text-align: left;
 		vertical-align: middle;
-		width: 70%;
+		width: 80%;
 		position: absolute;
 		right: 20px;
 		top: 20px;
 	}
-	.end{
-		display: block;
-		width: 100%;
-		line-height: 1.6;
-		text-align: center;
-		padding: 100px 0 0;
-		margin: 0 auto;
-		font-size: 150%;
-		color: white;
-	}
-	.switch a{
-	position: absolute;
-	left: 10px;
-	bottom: 10px;
-	padding: 0 10px;
-	background-color: rgba(0, 0, 0,0.65);
-	width: 50px;
-	height: 30px;
-	color: rgba(255, 255, 255,0.75);
-	z-index: 999;
-	font-size: 12px;
-	text-align: center;
-	line-height: 30px;
-	}
 }
+
 
 @media (min-width: 568px) and (max-width:768px){ 
 	span.h{
@@ -107,21 +136,22 @@ audio{
 		display: block;
 	}
 	.wrapper li{
-		/*width: 100%;
-		height: 320px;*/
+		/*width: 100%;*/
+		/*height: 320px;*/
 		background-repeat: no-repeat;
-		background-size: 50% auto;
-		background-position: 30px center;
+		background-size: cover;
+		background-position: left;
 		background-color: black;
 	}
 	.text{
 		max-width: 300px;
 		height: auto;
 		background: none;
-		top: 20%;
+		top: 30%;
+		text-shadow: 0 0 1px #000000;
 	}
 	.text h3{
-		font-size: 100%;
+		font-size: 130%;
 		font-weight: 400;
 	}
 	
@@ -134,8 +164,8 @@ audio{
 		display: block;
 	}
 	.wrapper li{
-		/*width: 100%;
-		height: 768px;*/
+		/*width: 100%;*/
+		/*height: 768px;*/
 		background-size: cover;
 		background-position-y: 30%;
 	}
@@ -153,15 +183,13 @@ audio{
 		display: block;
 	}
 	.wrapper li{
-		width: 100%;
-		height: 768px;
+		/*width: 100%;*/
+		/*height: 768px;*/
 		background-size: cover;
 		background-position-y: 30%;
 	}	
 	.text{
 		width: 300px;
-		height: 768px;;
-		overflow: hidden;
 	}
 	
 }
