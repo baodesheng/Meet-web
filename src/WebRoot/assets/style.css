@@ -35,8 +35,12 @@ audio{
 		text-align: center;
 		padding: 50% 0;
 		margin: 0 auto;
-		font-size: 150%;
+		font-size: 130%;
 		color: gray;
+		background-image: url(screen.png);
+		background-size: 75px 40px;
+		background-repeat: no-repeat;
+		background-position: center center;
 	}
 @media all{
 	.wrapper {
@@ -103,8 +107,8 @@ audio{
 		display: block;
 	}
 	.wrapper li{
-		width: 100%;
-		height: 320px;
+		/*width: 100%;
+		height: 320px;*/
 		background-repeat: no-repeat;
 		background-size: 50% auto;
 		background-position: 30px center;
@@ -130,8 +134,8 @@ audio{
 		display: block;
 	}
 	.wrapper li{
-		width: 100%;
-		height: 768px;
+		/*width: 100%;
+		height: 768px;*/
 		background-size: cover;
 		background-position-y: 30%;
 	}
