@@ -24,12 +24,12 @@ var Meet = require('./meet');
 exports.NoLoginHandler = {
     "/": index,                                     //  首页
     "/login": Session.login,                        //  登录
-    "/show": Meet.show,                           //  展示文章
+    "/show": Article.show,                           //  展示文章
     "/showObject": Record.showObject,               //  OBJECT方式展示文章
     "/article": Record.show,
     "/print": Record.print,
     "/invite": Invite.invite,
-    "/meet": Article.show
+    "/meet": Meet.show
 };
 
 //  需要登录的
