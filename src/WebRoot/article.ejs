@@ -21,7 +21,6 @@
 	</script>
 </head>
 <body>
-<div class="switch"><a href="/meet?topicId=<%=creamData.topicId%>" target="_self">自动播放</a></div>
 <% if (isIOS) { %>
 <div class="tip-weixin" style="display: none;">
 	点击右上角图标，选择「在Safari中打开」即可
@@ -48,6 +47,7 @@
 	<li class="ui-list-item">
 		<div class="ui-doc">
 			<div class="ui-doc-img cover">
+				<div class="switch"><a href="/meet?topicId=<%=creamData.topicId%>" target="_self">自动播放</a></div>
 				<img src="<%=creamData.image%>" />
 				<div class="ui-doc-param">
 					<div class="ui-doc-param-name"><%- creamData.title %></div>
