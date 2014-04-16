@@ -122,6 +122,12 @@ img,object{max-width:100%}
 	margin: 0 12px;
 	line-height: 120%;
 }
+.sd-font span.fivestar{
+	background-image: url('../images/app-five-star.png');
+	background-size: 48px 8px;
+	background-repeat: no-repeat;
+	background-position: 118px 20px;
+}
 .sd-dl{
 	display: block;
 	color: #3d4245;
