@@ -128,7 +128,7 @@
 	人生有许多故事，生活纪录片帮助你<br />记录每一段故事
 </div>
 <% if (isIOS) { %>
-<div id="smartAd" class="smartad">
+<div id="smartAd" class="smartad-ios">
 	<a id="smartAd-close" class="sd-close" href="#"></a>
 	<a onClick="javascript:try_to_open_app();" id="smartAd-open" class="sd-point" href="wx7d3783dc372514df://<%=creamData.topicId%>">
 	<p class="sd-font">
@@ -149,7 +149,7 @@
 	</script>
 </div>
 <% } else { %>
-<div id="smartAd" class="smartad">
+<div id="smartAd" class="smartad-Android">
 	<a onClick="javascript:try_to_open_app();" id="smartAd-open" class="sd-point" href="meet://meet.liba.com/share?id=<%=creamData.topicId%>">
 	<p class="sd-font">
 		<b class="sd-meet"></b>
