@@ -165,7 +165,7 @@ img,object{max-width:100%}
 @media all and (min-width: 1025px) {
 	.ui-doc-param{top: 0;width: 100%;height: 240px;padding-top: 40px;background-color: rgba(0, 0, 0, 0.36);}
 	.ui-doc-img{border:0}
-	.smartad{display: none;}
+	.smartad-ios,.smartad-Android{display: none;}
 	.ui-footer{display: block;margin:24px auto 80px auto;border-top:1px solid #D6D6D6;width:40%;text-align:center;font-size: 12px;}
 	.ui-footer img{display:block;margin:0 auto;padding:20px 9px 7px 9px;}
 	.ui-footer-mobile{display: none;}
