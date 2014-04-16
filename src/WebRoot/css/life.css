@@ -63,7 +63,7 @@ img,object{max-width:100%}
 	margin: 0 auto;
 }
 .smartad-Android{
-	background-color: rgba(66,66,74,0.75);
+	background-color: rgba(0,0,0,0.75);
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -74,7 +74,7 @@ img,object{max-width:100%}
 	font-size: 14px;
 }
 .smartad-ios{
-	background-color: rgba(66,66,74,0.96);
+	background-color: rgba(0,0,0,0.75);
 	position: fixed;
 	bottom: 0;
 	left: 0;
