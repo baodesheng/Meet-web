@@ -150,6 +150,7 @@
 </div>
 <% } else { %>
 <div id="smartAd" class="smartad-Android">
+	<a href="###" class="close-smartAd-Android"></a>
 	<a onClick="javascript:try_to_open_app();" id="smartAd-open" class="sd-point" href="meet://meet.liba.com/share?id=<%=creamData.topicId%>">
 	<p class="sd-font">
 		<b class="sd-meet"></b>
@@ -169,6 +170,10 @@
 $(".sd-point").click(function() {
   $(".tip-weixin").show("fast");
   $(".tip-weixin").delay(6000).hide("slow");
+});
+
+$( ".close-smartAd-Android" ).click(function() {
+	$("#smartAd-Android").hide("fast");
 });
 </script>
 </body>

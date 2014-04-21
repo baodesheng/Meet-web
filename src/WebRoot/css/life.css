@@ -31,7 +31,18 @@ img,object{max-width:100%}
 .ui-doc-img{position:relative;overflow:hidden;}
 .ui-doc-img img{display:block;margin-bottom: 19px;
 }
-.ui-doc-param{position:absolute;left:0;top:0;width:100%;text-align:center;color:#FFF;height: 200px;padding-top: 60px;background-color: rgba(0, 0, 0, 0.36);}
+.ui-doc-param{
+		position:absolute;
+		left:0;
+		bottom:0;
+		width:100%;
+		text-align:left;
+		color:#FFF;
+		/*height: 200px;*/
+		/*padding-top: 60px;*/
+		/*background-color: rgba(0, 0, 0, 0.36);*/
+		padding-left: 10px
+	}
 .ui-doc-param-name{padding: 10px 0;
 	font-size:150%;text-shadow:0px 0px 3px #666;font-family:\5b8b\4f53}
 .ui-doc-param-date{font-size:12px}
@@ -48,7 +59,7 @@ img,object{max-width:100%}
 .ui-footer img{display:block;margin:0 auto;padding:20px 9px 7px 9px;
 }
 .cover{
-	height: 240px;
+	/*height: 240px;*/
 	margin-bottom: 20px;
 }
 .badge-ios a,.badge-android a{
@@ -63,7 +74,7 @@ img,object{max-width:100%}
 	margin: 0 auto;
 }
 .smartad-Android{
-	background-color: rgba(0,0,0,0.75);
+	background-color: rgba(66,66,74,0.75);
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -71,10 +82,25 @@ img,object{max-width:100%}
 	width: 100%;
 	font-size: 1rem;
 	z-index: 1000;
+	font-size: 14px;
+}
+.close-smartAd-Android{
+	position: absolute;
+	/*display: block;*/
+	left: 0;
+	top: 0;
+	width: 18px;
+	height: 18px;
+	line-height: 18px;
+	color: white;
+	text-align: center;
 	font-size: 12px;
+	background-image: url(../images/close.png);
+	background-repeat: no-repeat;
+	background-size: 18px 18px;
 }
 .smartad-ios{
-	background-color: rgba(0,0,0,0.75);
+	background-color: rgba(66,66,74,0.96);
 	position: fixed;
 	bottom: 0;
 	left: 0;
@@ -121,12 +147,6 @@ img,object{max-width:100%}
 	display: block;
 	margin: 0 12px;
 	line-height: 120%;
-}
-.sd-font span.fivestar{
-	background-image: url('../images/app-five-star.png');
-	background-size: 48px 8px;
-	background-repeat: no-repeat;
-	background-position: 72px 4px;
 }
 .sd-dl{
 	display: block;
