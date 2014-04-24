@@ -81,3 +81,43 @@ body{
 	right: 20px;
 	bottom: 20px;
 }
+@media (max-width:320px) {
+	.logo{
+		left: 20px;
+		top: 20px;
+	}
+	.text_01,.text_02,.text_03{
+		top: 20px;
+	}
+	.text_01{
+		left: 90px;
+	}
+	.text_02{
+		left: 130px;
+	}
+	.text_03{
+		left: 150px;
+	}
+	.button_ios{
+		position: absolute;
+		display: block;
+		width: 44px;
+		height: 185px;
+		background-image: url(../images/button_ios_2014.png);
+		background-repeat: no-repeat;
+		background-size: 44px 185px;
+		top: 20px;
+		left: 200px;
+	}
+	.button_android{
+		position: absolute;
+		display: block;
+		width: 44px;
+		height: 150px;
+		background-image: url(../images/button_Android_2014.png);
+		background-repeat: no-repeat;
+		background-size: 44px 150px;
+		top: 20px;
+		left: 260px;
+	}
+}
