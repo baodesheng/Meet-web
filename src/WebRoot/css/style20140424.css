@@ -120,4 +120,7 @@ body{
 		top: 20px;
 		left: 260px;
 	}
+	.meet_code{
+		display: none;
+	}
 }
