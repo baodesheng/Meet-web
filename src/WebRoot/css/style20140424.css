@@ -81,7 +81,7 @@ body{
 	right: 20px;
 	bottom: 20px;
 }
-@media (max-width:320px) {
+@media (max-width:400px) {
 	.logo{
 		left: 20px;
 		top: 20px;
