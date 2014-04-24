@@ -1,0 +1,83 @@
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+html{background-color:#f8f8f8}
+body{overflow-x:hidden;font-family:Arial,\5b8b\4f53;line-height:1.5;color:#757575}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+nav ul{list-style:none}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{content:none}
+a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent;color:#333;text-decoration:none}
+ins{background-color:#FF9;color:#000;text-decoration:none}
+mark{background-color:#FF9;color:#000;font-style:italic;font-weight:bold}
+del{text-decoration:line-through}
+abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}
+table{border-collapse:collapse;border-spacing:0}
+hr{display:block;height:1px;border:0;border-top:1px solid #CCC;margin:1em 0;padding:0}
+input,select{vertical-align:middle}
+input,select,textarea{color:#444;font-size:14px;line-height:19px}
+textarea{resize:none}
+input::-webkit-input-placeholder{color:#B0B0B0}
+h1{color:#444}
+img,object{max-width:100%}
+body{
+	background-image: url(../images/background_img_01.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	height: 100%;
+}
+.logo{
+	position: absolute;
+	background-image: url(../images/meet_logo_2014.png);
+	background-repeat: no-repeat;
+	width: 45px;
+	height: 45px;
+	background-size: 45px 45px;
+	top: 45px;
+	left: 45px;
+}
+.text_01,.text_02,.text_03{
+	position: absolute;
+	top: 45px;
+	width: 1em;
+	line-height: 120%;
+	color: white;
+	font-size: 120%;
+	text-shadow: 0px 1px 1px #666;
+	font-weight: 700;
+}
+.text_01{
+	left: 125px;
+}
+.text_02{
+	left: 170px;
+}
+.text_03{
+	left: 195px;
+}
+.button_ios{
+	position: absolute;
+	display: block;
+	width: 44px;
+	height: 185px;
+	background-image: url(../images/button_ios_2014.png);
+	background-repeat: no-repeat;
+	background-size: 44px 185px;
+	top: 45px;
+	left: 235px;
+}
+.button_android{
+	position: absolute;
+	display: block;
+	width: 44px;
+	height: 150px;
+	background-image: url(../images/button_Android_2014.png);
+	background-repeat: no-repeat;
+	background-size: 44px 150px;
+	top: 45px;
+	left: 299px;
+}
+.meet_code{
+	position: absolute;
+	right: 20px;
+	bottom: 20px;
+}

@@ -4,12 +4,44 @@
 	<meta http-equiv="Content-Type" content="text/html"; charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>生活纪录片-记录一段故事</title>
-	<link rel="stylesheet" href="css/style20140310.css" />
+	<link rel="stylesheet" href="css/style20140424.css" />
+	<link rel="stylesheet" href="assets/animate.css" />
 	<link rel="shortcut icon" href="http://meet.liba.com/img/Icon@2x.png">
+	<script src="assets/jquery-1.9.1.min.js"></script>
+	<script src="assets/jquery.lettering.js"></script>
+	<script src="assets/jquery.textillate.js"></script>
+	<!--自适应屏幕高度-->
+	<script>  
+	$(document).ready(function(){  
+	    //初始化宽度、高度  
+	    $("body").width($(window).width());  
+	    $("body").height($(window).height());  
+	    //当文档窗口发生改变时 触发  
+	    $(window).resize(function(){  
+	        $("body").width($(window).width());  
+	        $("body").height($(window).height());  
+	    	})  
+	    })
+	</script>
+	
+	<!--自适应屏幕高度-->
+	<script>
+		$(function () {
+			$('p').textillate({ in: { effect: 'flipInX' } });
+		})
+	</script>
 </head>
 <body>
-	
-	<div class="ui-meet">
+	<h1 class="logo"></h1>
+	<p class="text_01" data-in-effect="rollIn">生活纪录片</p>
+	<p class="text_02">人生有许多故事
+	，生活纪录片帮助你</p>
+	<p class="text_03">记录每一段个故事
+	。</p>
+	<a href="https://itunes.apple.com/cn/app/sheng-huo-ji-lu-pian-ji-lu/id590218307?mt=8" class="button_ios"></a>
+	<a href="http://www.wandoujia.com/apps/com.liba.android.meet" class="button_android"></a>
+	<img src="images/meet2013123_code.png" width="75" height="75" alt="" class="meet_code" />
+	<!--<div class="ui-meet">
 		<div class="ui-meet-logo"><img src="images/meet-logo.png" alt="生活纪录片" /></div>
 		<div class="download">
 			<a href="https://itunes.apple.com/cn/app/sheng-huo-ji-lu-pian-ji-lu/id590218307?mt=8" title=""><img src="images/ui-button-ios.png" alt="从 APP Store 下载" /></a>
@@ -28,7 +60,7 @@
 				<img src="images/ui-b.png" alt="" />
 			</div>
 		</div>
-	</div>
+	</div>-->
 
 </body>
 </html>
