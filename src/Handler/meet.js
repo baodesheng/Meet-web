@@ -20,6 +20,7 @@ exports.show = function(request, response) {
                         var article = rs[0];
                         loadData.creamData = {
                             topicId: article.id,
+                            token: article.token,
                             author: article.author,
                             title: article.title,
                             image: article.image,
@@ -63,6 +64,8 @@ exports.show = function(request, response) {
 
                 queryParams.articleId = Math.abs(queryParams.topicId);
                 Record.getArticleById(queryParams, next);
+            } else if (queryParams.token) {
+                Record.getArticleByToken(queryParams, next);
             } else {
                 WebUtil.redirect(STATIC.NOT_FOUND, request, response);
             }
