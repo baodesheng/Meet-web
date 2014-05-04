@@ -168,7 +168,7 @@ hr{
 }
 #active ul{
 	width: 320px;
-	margin: 20px auto 0;
+	margin: 0 auto;
 	list-style: none;
 }
 #active ul li{
