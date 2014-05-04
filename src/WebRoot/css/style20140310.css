@@ -161,8 +161,61 @@ hr{
 .ui-footer h1{font-size:150%;width:100%;}
 .ui-footer img{display:block;margin:0 auto;padding:20px 9px 7px 9px;}
 
-
+/* 活动页面样式 */
 #active p{
 	margin-top: 30%;
 	text-align: center;
+}
+#active ul{
+	width: 320px;
+	margin: 0 auto;
+	list-style: none;
+}
+#active ul li{
+	display: block;
+	background-color: gray;
+	width: 320px;
+	height: 150px;
+	
+	background-repeat: no-repeat;
+	background-size: 320px 150px;
+	margin-bottom: 4px;
+}
+#active ul li.a_c_01{
+	background-image: url(../images/a_c_01.png);
+}
+#active ul li.a_c_02{
+	background-image: url(../images/a_c_02.png);
+}
+#active ul li a{
+	position: relative;
+	display: block;
+	width: 100%;
+	height:150px;
+	font-size: 14px;
+	color: white;
+}
+#active ul li span.title{
+	position: absolute;
+	top: 105px;
+	left: 10px;
+}
+#active ul li span.title sup{
+	margin: 0 2px;
+	padding: 1px 2px;
+	font-size: 12px;
+	border-radius: 2px;
+}
+#active ul li span.title sup.end{
+	background-color: #f60;
+}
+#active ul li span.title sup.wait{
+	background-color: #ccc;
+}
+#active ul li span.des{
+	position: absolute;
+	top: 125px;
+	left: 10px;
+	font-size: 12px;
+	color: #999;
 }
