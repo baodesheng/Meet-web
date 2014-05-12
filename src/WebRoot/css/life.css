@@ -29,6 +29,9 @@ img,object{max-width:100%}
 
 .ui-doc{margin:0;padding:0}
 .ui-doc-img{position:relative;overflow:hidden;}
+.ui-doc-img>img{
+	width: 100%;
+}
 /*.ui-doc-img img{display:block;margin-bottom: 19px;
 }*/
 .ui-doc-param{
