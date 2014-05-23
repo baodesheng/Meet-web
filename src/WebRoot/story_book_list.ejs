@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="no-cache"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="user-scalable=no,width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <title>选择要印刷的纪录片</title>
+    <link rel="stylesheet" href="assets/story_book_style.css" />
+</head>
+<script type="text/javascript">
+    function submitFunc() {
+        if (!document.recordForm.recordName) {
+            alert("选择一篇纪录片");
+            return false;
+        }
+        document.recordForm.submit();
+    }
+</script>
+<body>
+<nav>选择要印刷的纪录片</nav>
+<form name="recordForm" method="post" action="/story_book_to_info">
+    <input type="hidden" name="userName" value="<%-userName%>">
+<div class="list">
+    <ul>
+    <%
+	for (var i=0; i<rs.length; i++) {
+        var item = rs[i];
+        var checked = (i == 0 ? "checked" : "");
+	%>
+        <li>
+            <label for=""><input type="radio" name="recordName" value="<%-item.title%>" <%-checked%>/></label>
+            <span class="list-img"><img src="<%-item.image%>" width="" height="53" alt="" /></span>
+				<span class="list-title">
+					<h3><%-item.title%></h3>
+					<p><%-page%>页</p>
+				</span>
+        </li>
+    <%
+	}
+	%>
+    </ul>
+</div>
+<div class="ui-submit-button">
+    <span><b>0</b>/3</span>
+    <a href="javascript:submitFunc();">确定</a>
+</div>
+</form>
+</body>
+</html>

@@ -15,7 +15,9 @@ exports.STATIC = {
     NOT_FOUND: "/404.html",
     ERROR_SERVER: "/500.html",
     INDEX: "/index.html",
-    PRINT_SUCCESS: "/print-ok.html"
+    PRINT_SUCCESS: "/print-ok.html",
+    PRINT2_SUCCESS: "/story_book_ok.html",
+    STORY_BOOK_LIBA_LOGIN: "/story_book_liba_login.html"
 };
 
 /**
@@ -23,7 +25,8 @@ exports.STATIC = {
  * @type {Object}
  */
 exports.DYNAMIC = {
-    LOGIN: "/login"
+    LOGIN: "/login",
+    STORY_BOOK_LIST: "/story_book_list"
 };
 
 // ----- EJS -----
@@ -36,5 +39,7 @@ exports.EJS = {
     SHOW_OBJECT: "show_object",
     ARTICLE: 'article',
     INVITE: 'invite',
-    MEET: 'meet'
+    MEET: 'meet',
+    STORY_BOOK_LIST: "story_book_list",
+    STORY_BOOK_INFO: "story_book_info"
 };

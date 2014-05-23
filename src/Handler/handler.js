@@ -28,6 +28,13 @@ exports.NoLoginHandler = {
     "/showObject": Record.showObject,               //  OBJECT方式展示文章
     "/article": Record.show,
     "/print": Record.print,
+    "/print2": Record.print2,
+    "/story_book_list": Record.list,
+    "/story_book_to_info": Record.toInfo,
+    "/story_book_info": Record.info,
+    "/doubanBack": Session.doubanBack,
+    "/sinaBack": Session.sinaBack,
+    "/qqBack": Session.qqBack,
     "/invite": Invite.invite,
     "/meet": Meet.show
 };

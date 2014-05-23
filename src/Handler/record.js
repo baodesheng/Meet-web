@@ -239,6 +239,146 @@ function print(request, response) {
     }
 }
 
+/**
+ * 罗列用户的纪录片列表
+ * @param request
+ * @param response
+ */
+function list(request, response) {
+    var reqMethod = request.method;
+    // GET
+    if ("GET" == reqMethod) {
+        var main = function(queryParams) {
+            var next = function(msg, rs){
+                if (MESSAGE.SUCCESS == msg) {
+                    if (rs && rs instanceof Array && rs.length > 0) {
+                        var loadData = {};
+                        loadData.rs = rs;
+                        loadData.page = 123;
+                        loadData.userName = queryParams.userName;
+                        WebUtil.loadPage(EJS.STORY_BOOK_LIST, loadData, response);
+                    } else {
+                        WebUtil.redirect(STATIC.NOT_FOUND, request, response);
+                    }
+                } else {
+                    WebUtil.redirect(STATIC.NOT_FOUND, request, response);
+                }
+            };
+
+            //
+            if (queryParams.authorId && !isNaN(queryParams.authorId)) {
+                Record.getArticlesByAuthorId(queryParams, next);
+            } else {
+                WebUtil.redirect(STATIC.NOT_FOUND, request, response);
+            }
+        };
+        Handler.preHandleGetReq(request, response, main);
+
+    }
+    // POST
+    else if ("POST" == reqMethod) {
+        Handler.fail(response, HTTP_CODE.ERROR_PARAM, Result.make(RS_CODE.FAIL, MESSAGE.ERROR_PARAM));
+    }
+}
+
+/**
+ * 打印活动2
+ * @param request
+ * @param response
+ */
+function print2(request, response) {
+    var reqMethod = request.method;
+    // GET
+    if ("GET" == reqMethod) {
+        Handler.fail(response, HTTP_CODE.ERROR_PARAM, Result.make(RS_CODE.FAIL, MESSAGE.ERROR_PARAM));
+    }
+    // POST
+    else if ("POST" == reqMethod) {
+        var main = function(queryParams) {
+            var next = function(msg, rs){
+                if (MESSAGE.SUCCESS == msg) {
+                    WebUtil.redirect(STATIC.PRINT2_SUCCESS, request, response);
+                } else {
+                    Handler.fail(response, HTTP_CODE.ERROR_SERVER, Result.make(RS_CODE.FAIL, MESSAGE.ERROR_SERVER));
+                }
+            };
+
+            //
+            if (queryParams.userName && queryParams.recordName && queryParams.realName && queryParams.address && queryParams.tel) {
+                Record.addPrintInfo(queryParams, next);
+            } else {
+                Handler.fail(response, HTTP_CODE.ERROR_PARAM, Result.make(RS_CODE.FAIL, MESSAGE.ERROR_PARAM));
+            }
+        };
+        Handler.preHandlePostReq(request, response, main);
+    }
+}
+
+/**
+ * 打印活动2
+ * @param request
+ * @param response
+ */
+function toInfo(request, response) {
+    var reqMethod = request.method;
+    // GET
+    if ("GET" == reqMethod) {
+        Handler.fail(response, HTTP_CODE.ERROR_PARAM, Result.make(RS_CODE.FAIL, MESSAGE.ERROR_PARAM));
+    }
+    // POST
+    else if ("POST" == reqMethod) {
+        var main = function(queryParams) {
+            if (queryParams.userName && queryParams.recordName) {
+                WebUtil.loadPage(EJS.STORY_BOOK_INFO, queryParams, response);
+            } else {
+                WebUtil.redirect(STATIC.NOT_FOUND, request, response);
+            }
+        };
+        Handler.preHandlePostReq(request, response, main);
+    }
+}
+
+/**
+ * 打印活动
+ * @param request
+ * @param response
+ */
+function info(request, response) {
+    var reqMethod = request.method;
+    // GET
+    if ("GET" == reqMethod) {
+        Handler.fail(response, HTTP_CODE.ERROR_PARAM, Result.make(RS_CODE.FAIL, MESSAGE.ERROR_PARAM));
+    }
+    // POST
+    else if ("POST" == reqMethod) {
+        var main = function(queryParams) {
+            var next = function(msg, rs){
+                if (MESSAGE.SUCCESS == msg) {
+                    WebUtil.redirect(STATIC.PRINT2_SUCCESS, request, response);
+                } else {
+                    Handler.fail(response, HTTP_CODE.ERROR_SERVER, Result.make(RS_CODE.FAIL, MESSAGE.ERROR_SERVER));
+                }
+            };
+
+            //
+            if (queryParams.userName && queryParams.recordName && queryParams.realName
+                && queryParams.address && queryParams.tel) {
+                if (!queryParams.nameType || isNaN(queryParams.nameType) ) {
+                    queryParams.nameType = 0;
+                }
+                Record.addPrint2Info(queryParams, next);
+            } else {
+                Handler.fail(response, HTTP_CODE.ERROR_PARAM, Result.make(RS_CODE.FAIL, MESSAGE.ERROR_PARAM));
+            }
+        };
+        Handler.preHandlePostReq(request, response, main);
+    }
+}
+
 exports.show = show;
 exports.showObject = showObject;
 exports.print = print;
+exports.list = list;
+exports.print2 = print2;
+exports.toInfo = toInfo;
+exports.info = info;

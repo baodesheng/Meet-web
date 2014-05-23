@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="no-cache"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="user-scalable=no,width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <title>登录</title>
+    <link rel="stylesheet" href="assets/story_book_style.css" />
+</head>
+<script type="text/javascript">
+    function focusFunc(e) {
+        if (!e.getAttribute("notEmpty")) {
+            e.value = "";
+        }
+    }
+
+    function blurFunc(e) {
+        if (!e.value) {
+            e.value = e.getAttribute("default");
+        } else {
+            e.setAttribute("notEmpty", "1");
+        }
+    }
+
+    function submitFunc() {
+        if (!document.libaLoginForm.username || !document.libaLoginForm.username.getAttribute("notEmpty")) {
+            alert("用户名不能为空");
+            document.libaLoginForm.username.focus();
+            return false;
+        }
+        if (!document.libaLoginForm.password || !document.libaLoginForm.password.getAttribute("notEmpty")) {
+            alert("密码不能为空");
+            document.recordForm.password.focus();
+            return false;
+        }
+        document.libaLoginForm.submit();
+    }
+</script>
+<body>
+<form name="libaLoginForm" method="post" action="/login">
+<div class="info" style="width: 300px;margin: 0 auto;">
+    <h3 style="text-align: center;margin-top: 10px;"><img src="assets/story_book_images/button_site_liba.png" width="60" height="60" alt="" /><br />用篱笆网账户登录</h3>
+    <label for="">用户名</label>
+    <input type="text" name="username" value="用户名" default="用户名" onfocus="focusFunc(this);" onblur="blurFunc(this);" class="text" />
+    <label for="">密码</label>
+    <input type="password" name="password" value="密码" default="密码" onfocus="focusFunc(this);" onblur="blurFunc(this);" class="text" /><br />
+    <input type="hidden" name="provider" value="liba">
+    <a href="javascript:submitFunc();" style="display: block;width: 155px;height: 44px;margin: 10px auto; auto;background-image: url('assets/story_book_images/button_site_login_for_iphone.png');background-position: center center;background-repeat: no-repeat;background-size: 155px 44px;text-indent: -9999px;">登录</a>
+</div>
+</form>
+</body>
+</html>
