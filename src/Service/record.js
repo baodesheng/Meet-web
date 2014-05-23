@@ -122,6 +122,39 @@ function addPrintInfo(params, next) {
     DBUtil.insert(TABLE_NAME_LR_PRINT, rowData, next);
 }
 
+/**
+ * 新增打印活动报名信息
+ * @param params
+ * @param next
+ */
+function addPrint2Info(params, next) {
+    var rowData = {
+        user_name: params.userName,
+        record_name: params.recordName,
+        real_name: params.realName,
+        address: params.address,
+        tel: params.tel,
+        name_type: params.nameType,
+        update_time: new Date()
+    };
+    DBUtil.insert(TABLE_NAME_LR_PRINT, rowData, next);
+}
+
+/**
+ * 根据 作者ID 获取文章列表
+ * @param params
+ * @param next
+ */
+function getArticlesByAuthorId(params, next) {
+    var sql = "select id, token, author, author_id, avatar, title, image, '' AS content, type, status, DATE_FORMAT(update_time,'%Y-%m-%d %H:%i:%s') as publish_time, DATE_FORMAT(create_time,'%Y-%m-%d') as create_time "
+        + " from " + TABLE_NAME_LR_ARTICLE + " where author_id=" + params.authorId;
+    if (!params.a || isNaN(params.a) || params.a != -1) {
+        sql += " and status<>4 ";
+    }
+    console.log("getArticlesByAuthorId:"+sql);
+    DBUtil.select(sql, next);
+}
+
 exports.getCreamByTopicId = getCreamByTopicId;
 exports.getSectionByCreamId = getSectionByCreamId;
 exports.getItemBySectionId = getItemBySectionId;
@@ -131,3 +164,5 @@ exports.getArticleById = getArticleById;
 exports.getArticleContentById = getArticleContentById;
 
 exports.addPrintInfo = addPrintInfo;
+exports.addPrint2Info = addPrint2Info;
+exports.getArticlesByAuthorId = getArticlesByAuthorId;
