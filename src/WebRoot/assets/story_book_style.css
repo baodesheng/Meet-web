@@ -117,6 +117,7 @@ nav{
 }
 .list ul{
     padding: 10px;
+    margin-bottom: 50px;
 }
 .list ul li{
     width: 100%;
