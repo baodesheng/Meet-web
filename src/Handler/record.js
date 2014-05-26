@@ -254,7 +254,6 @@ function list(request, response) {
                     if (rs && rs instanceof Array && rs.length > 0) {
                         var loadData = {};
                         loadData.rs = rs;
-                        loadData.page = 123;
                         loadData.userName = queryParams.userName;
                         WebUtil.loadPage(EJS.STORY_BOOK_LIST, loadData, response);
                     } else {
