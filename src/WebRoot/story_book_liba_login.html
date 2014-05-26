@@ -38,8 +38,15 @@
         }
         document.libaLoginForm.submit();
     }
+
+    function onloadFunc(){
+        var urlArr = document.URL.split("?");
+        if (urlArr && urlArr[1] == "error") {
+            alert("用户名或密码不正确");
+        }
+    }
 </script>
-<body>
+<body onload="onloadFunc();">
 <form name="libaLoginForm" method="post" action="/login">
 <div class="info" style="width: 300px;margin: 0 auto;">
     <h3 style="text-align: center;margin-top: 10px;"><img src="assets/story_book_images/button_site_liba.png" width="60" height="60" alt="" /><br />用篱笆网账户登录</h3>

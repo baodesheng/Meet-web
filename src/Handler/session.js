@@ -365,7 +365,7 @@ function qqBack(request, response) {
                                     } else {
                                         data = {msg:"用户名或密码不正确"};
                                         console.log("用户名或密码不正确");
-                                        WebUtil.redirect(STATIC.STORY_BOOK_LIBA_LOGIN, request, response);
+                                        WebUtil.redirect(STATIC.STORY_BOOK_LIBA_LOGIN+"?error", request, response);
                                     }
                                 };
 
