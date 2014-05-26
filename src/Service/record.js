@@ -146,11 +146,14 @@ function addPrint2Info(params, next) {
  * @param next
  */
 function getArticlesByAuthorId(params, next) {
-    var sql = "select id, token, author, author_id, avatar, title, image, '' AS content, type, status, DATE_FORMAT(update_time,'%Y-%m-%d %H:%i:%s') as publish_time, DATE_FORMAT(create_time,'%Y-%m-%d') as create_time "
-        + " from " + TABLE_NAME_LR_ARTICLE + " where author_id=" + params.authorId;
+    var sql = "select a.id, a.token, a.author, a.author_id, a.avatar, a.title, a.image, '' AS content, a.type, a.status, DATE_FORMAT(a.update_time,'%Y-%m-%d %H:%i:%s') as publish_time, DATE_FORMAT(a.create_time,'%Y-%m-%d') as create_time, COUNT(b.id) AS page "
+        + " from " + TABLE_NAME_LR_ARTICLE + " a LEFT JOIN lr_cell b ON (a.id=b.article_id) where a.author_id=" + params.authorId;
     if (!params.a || isNaN(params.a) || params.a != -1) {
-        sql += " and status<>4 ";
+        sql += " and a.status<>4 ";
     }
+
+    sql += " GROUP BY a.id";
+
     console.log("getArticlesByAuthorId:"+sql);
     DBUtil.select(sql, next);
 }
