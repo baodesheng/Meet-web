@@ -49,12 +49,12 @@
 <div class="info">
     <form name="recordForm" method="post" action="/story_book_info" >
         <label for="">真实姓名</label>
-        <input type="text" name="realName" value="真实姓名" default="真实姓名" onfocus="focusFunc(this);" onblur="blurFunc(this);" class="text" />
+        <input type="text" name="realName" value="真实姓名" default="" onfocus="focusFunc(this);" onblur="blurFunc(this);" class="text" />
         <br /><input type="checkbox" name="nameType" value="1" />显示为故事书的作者
         <label for="">地址</label>
         <textarea name="address" value="寄送地址" default="寄送地址" onfocus="focusFunc(this);" onblur="blurFunc(this);"></textarea>
         <label for="">手机号码</label>
-        <input type="tel" name="tel" value="联系电话" default="联系电话" onfocus="focusFunc(this);" onblur="blurFunc(this);" class="text" />
+        <input type="tel" name="tel" value="联系电话" default="" onfocus="focusFunc(this);" onblur="blurFunc(this);" class="text" />
         <input type="hidden" name="userName" value="<%-userName%>">
         <input type="hidden" name="recordName" value="<%-recordName%>">
     </form>
