@@ -201,10 +201,30 @@ nav{
     padding-top: 10px;
 }
 .info input.text{
-    width: 280px;
+    /*width: 280px;
     height: 30px;
     margin-bottom: 5px;
-    border: 1px solid #999;
+    border: 1px solid #999;*/
+    -webkit-appearance: none;
+    appearance: none;
+    display: inline-block;
+    height: 37px;
+    margin: 0;
+    padding: 0 8px;
+    background: #fff;
+    border: 1px solid #d9d9d9;
+    border-top: 1px solid #c0c0c0;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    border-radius: 1px;
+    font-size: 14px;
+    outline: 0;
+    resize: none;
+    line-height: normal;
 }
 textarea{
     width: 290px;
