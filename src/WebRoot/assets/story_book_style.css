@@ -40,6 +40,13 @@ img,object{max-width:100%}
     padding: 10px;
     display: block;
 }
+.guizhe{
+	background-color: #eee;
+	list-style-position: inside;
+	padding: 10px;
+	margin-bottom: 10px;
+	color: #f60;
+}
 .ui-storybook-info img{
     width: 100%;
     height: auto;
