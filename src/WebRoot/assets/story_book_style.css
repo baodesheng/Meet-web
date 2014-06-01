@@ -34,7 +34,7 @@ img,object{max-width:100%}
 }
 .ui-storybook-info,.info{
     width: 320px;
-    margin:0 auto 50px;
+    margin:0 auto 80px;
 }
 .ui-storybook-info p{
     padding: 10px;
@@ -63,7 +63,19 @@ img,object{max-width:100%}
     text-align: center;
     line-height: 44px;
 }
-.ui-jion-button a,.ui-submit-button a{
+.active-jion-button{
+	position: fixed;
+	bottom: 44px;
+	left: 0;
+	width: 100%;
+	height: 44px;
+	background-color: #ff3b30;
+	font-weight: 700;
+	font-size: 130%;
+	text-align: center;
+	line-height: 44px;
+}
+.ui-jion-button a,.ui-submit-button a,.active-jion-button a{
     display: block;
     width: 100%;
     height: 100%;
