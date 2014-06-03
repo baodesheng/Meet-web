@@ -267,6 +267,8 @@ function list(request, response) {
             //
             if (queryParams.authorId && !isNaN(queryParams.authorId)) {
                 Record.getArticlesByAuthorId(queryParams, next);
+            } else if (queryParams.userName) {
+                Record.getArticlesByAuthor(queryParams, next);
             } else {
                 WebUtil.redirect(STATIC.NOT_FOUND, request, response);
             }

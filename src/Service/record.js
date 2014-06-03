@@ -158,6 +158,19 @@ function getArticlesByAuthorId(params, next) {
     DBUtil.select(sql, next);
 }
 
+exports.getArticlesByAuthor = function(params, next) {
+    var sql = "select a.id, a.token, a.author, a.author_id, a.avatar, a.title, a.image, '' AS content, a.type, a.status, DATE_FORMAT(a.update_time,'%Y-%m-%d %H:%i:%s') as publish_time, DATE_FORMAT(a.create_time,'%Y-%m-%d') as create_time, COUNT(b.id) AS page "
+        + " from " + TABLE_NAME_LR_ARTICLE + " a LEFT JOIN lr_cell b ON (a.id=b.article_id) where a.author='" + params.userName + "'";
+    if (!params.a || isNaN(params.a) || params.a != -1) {
+        sql += " and a.status<>4 ";
+    }
+
+    sql += " GROUP BY a.id";
+
+    console.log("getArticlesByAuthor:"+sql);
+    DBUtil.select(sql, next);
+}
+
 exports.getCreamByTopicId = getCreamByTopicId;
 exports.getSectionByCreamId = getSectionByCreamId;
 exports.getItemBySectionId = getItemBySectionId;
