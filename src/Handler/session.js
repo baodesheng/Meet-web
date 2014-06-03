@@ -359,7 +359,7 @@ function qqBack(request, response) {
                                 var next = function(code, data) {
                                     if (code == 200) {
                                         console.log("登录成功 userId:"+data.user.id);
-                                        var paramStr = "?authorId=" + openid + "&userName=" + data.user.name;
+                                        var paramStr = "?authorId=" + data.user.id + "&userName=" + data.user.name;
                                         WebUtil.redirect(DYNAMIC.STORY_BOOK_LIST + paramStr, request, response);
 
                                     } else {
