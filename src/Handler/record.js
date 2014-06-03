@@ -265,8 +265,8 @@ function list(request, response) {
             };
 
             //
-            if (queryParams.userName) {
-                Record.getArticlesByAuthor(queryParams, next);
+            if (queryParams.authorId && !isNan(queryParams.authorId)) {
+                Record.getArticlesByAuthorId(queryParams, next);
             } else {
                 WebUtil.redirect(STATIC.NOT_FOUND, request, response);
             }
