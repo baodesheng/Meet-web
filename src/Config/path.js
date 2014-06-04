@@ -41,5 +41,6 @@ exports.EJS = {
     INVITE: 'invite',
     MEET: 'meet',
     STORY_BOOK_LIST: "story_book_list",
-    STORY_BOOK_INFO: "story_book_info"
+    STORY_BOOK_INFO: "story_book_info",
+    PRINT_LIST: "print_list"
 };

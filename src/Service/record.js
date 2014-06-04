@@ -171,6 +171,11 @@ exports.getArticlesByAuthor = function(params, next) {
     DBUtil.select(sql, next);
 }
 
+exports.getArtivityPrint = function(next) {
+    var sql = "SELECT user_name, record_name, update_time FROM lr_activity_print ORDER BY id DESC";
+    DBUtil.select(sql, next);
+};
+
 exports.getCreamByTopicId = getCreamByTopicId;
 exports.getSectionByCreamId = getSectionByCreamId;
 exports.getItemBySectionId = getItemBySectionId;

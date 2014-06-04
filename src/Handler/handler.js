@@ -17,6 +17,7 @@ var Record = require("./record");
 var Article = require("./article");
 var Invite = require('./invite');
 var Meet = require('./meet');
+var List = require('./list');
 
 // ----------- 登录 ------------
 
@@ -36,7 +37,8 @@ exports.NoLoginHandler = {
     "/sinaBack": Session.sinaBack,
     "/qqBack": Session.qqBack,
     "/invite": Invite.invite,
-    "/meet": Meet.show
+    "/meet": Meet.show,
+    "/list": List.list
 };
 
 //  需要登录的
