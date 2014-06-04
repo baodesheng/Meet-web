@@ -396,7 +396,7 @@ function qqBack(request, response) {
                 };
 
                 var getAccessToken = function() {
-                    var tokenUrl = "https://graph.qq.com/oauth2.0/token?client_id=101100001&client_secret=3fda25bc13012a080249d8dbb61243ef&redirect_uri=http://meet.liba.com/qqBack&grant_type=authorization_code&code=" + queryParams.code;
+                    var tokenUrl = "https://graph.qq.com/oauth2.0/token?client_id=100543186&client_secret=b077cd0b42cc83986aa70e67c186210a&redirect_uri=http://meet.liba.com/qqBack&grant_type=authorization_code&code=" + queryParams.code;
                     console.log("tokenUrl:"+tokenUrl);
                     https.get(tokenUrl, function(res) {
                         res.setEncoding('UTF-8');
