@@ -124,9 +124,17 @@
 		</a>
 	</div>
 </div>
+<% if (isIOS) { %>
 <div class="ui-footer-mobile">
 	人生有许多故事，每一段都值得记录
 </div>
+<% } else { %>
+<div class="ui-footer-mobile">
+	人生有许多故事，每一段都值得记录
+	<img src="images/mark.png" width="72" height="72" alt="生活纪录片"/>
+	生活纪录片<br />记录每一段故事
+</div>
+<% } %>
 <% if (isIOS) { %>
 <div id="smartAd" class="smartad-ios">
 	<!-- <a id="smartAd-close" class="sd-close" href="#"></a> -->
