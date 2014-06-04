@@ -172,7 +172,7 @@ exports.getArticlesByAuthor = function(params, next) {
 }
 
 exports.getArtivityPrint = function(next) {
-    var sql = "SELECT user_name, record_name, update_time FROM lr_activity_print ORDER BY id DESC";
+    var sql = "SELECT user_name, record_name, DATE_FORMAT(update_time,'%Y-%m-%d %H:%i:%s') as update_time FROM lr_activity_print ORDER BY id DESC";
     DBUtil.select(sql, next);
 };
 
