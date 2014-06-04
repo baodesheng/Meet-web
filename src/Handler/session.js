@@ -338,7 +338,7 @@ function qqBack(request, response) {
             if (queryParams.code) {
 
                 var getUserInfo = function(access_token, openid){
-                    var userInfoUrl = "https://graph.qq.com/user/get_user_info?access_token=" + access_token + "&openid=" + openid + "&oauth_consumer_key=101100001";
+                    var userInfoUrl = "https://graph.qq.com/user/get_user_info?access_token=" + access_token + "&openid=" + openid + "&oauth_consumer_key=100543186";
                     console.log("userInfoUrl:"+userInfoUrl);
                     https.get(userInfoUrl, function(res) {
                         res.setEncoding('UTF-8');
