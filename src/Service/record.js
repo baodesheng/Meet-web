@@ -130,6 +130,7 @@ function addPrintInfo(params, next) {
 function addPrint2Info(params, next) {
     var rowData = {
         user_name: params.userName,
+        article_id: params.articleId,
         record_name: params.recordName,
         real_name: params.realName,
         address: params.address,

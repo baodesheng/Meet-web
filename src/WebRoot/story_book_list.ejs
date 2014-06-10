@@ -16,6 +16,13 @@
             alert("选择一篇纪录片");
             return false;
         }
+        var recordNames = document.recordForm.recordName;
+        for (var i=0;i<recordNames.length;i++) {
+            var recordName = recordNames[i];
+            if (recordName.checked) {
+                document.recordForm.articleId.value = recordName.getAttribute("articleId");
+            }
+        }
         document.recordForm.submit();
     }
 </script>
@@ -23,15 +30,16 @@
 <nav>选择要印刷的纪录片</nav>
 <form name="recordForm" method="post" action="/story_book_to_info">
     <input type="hidden" name="userName" value="<%-userName%>">
+    <input type="hidden" name="articleId" value="0">
 <div class="list">
     <ul>
     <%
 	for (var i=0; i<rs.length; i++) {
         var item = rs[i];
         var checked = (i == 0 ? "checked" : "");
-	%>
+    %>
         <li>
-            <label for=""><input type="radio" name="recordName" value="<%-item.title%>" <%-checked%>/></label>
+            <label for=""><input type="radio" name="recordName" articleId="<%-item.id%>" value="<%-item.title%>" <%-checked%>/></label>
             <span class="list-img"><img src="<%-item.image%>" width="" height="" alt="" /></span>
 				<span class="list-title">
 					<h3><%-item.title%></h3>
