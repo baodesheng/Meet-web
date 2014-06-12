@@ -11,7 +11,20 @@
     <title>特别的故事书-第二季</title>
     <link rel="stylesheet" href="assets/story_book_style.css" />
 </head>
-<body>
+<script type="text/javascript">
+    function joinFunc() {
+        var endDate = new Date();
+        endDate.setFullYear(2014,5,15);
+
+        var today = new Date();
+
+        if (endDate > today)
+        {
+            location.href = "story_book_login.html";
+        }
+    }
+</script>
+<body >
 <div class="ui-storybook-info">
     <div class="cover"></div>
     <p>过去的几个月，我猜你写了不少故事，我相信你跟我一样认为能留下来的记忆非常珍贵。<br />这不，「特别的故事书」开始第二季了</p>
@@ -28,7 +41,7 @@
     <p>闭上眼睛，想想你的故事即将变成这本特别的书...</p>
 </div>
 <div class="ui-jion-button">
-    <a href="story_book_login.html">报名参加</a>
+    <a href="javascript:joinFunc();">报名参加</a>
 </div>
 
 <!-- Google 统计 -->
