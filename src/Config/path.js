@@ -40,6 +40,7 @@ exports.EJS = {
     ARTICLE: 'article',
     INVITE: 'invite',
     MEET: 'meet',
+    MEET_PLAY: 'meet_play',
     STORY_BOOK_LIST: "story_book_list",
     STORY_BOOK_INFO: "story_book_info",
     PRINT_LIST: "print_list"

@@ -1,0 +1,251 @@
+/* CSS Document */
+
+* {
+	margin: 0;
+	padding: 0;
+}
+html, body {
+	/*width: 100%;
+	height: 100%;
+	overflow: hidden;*/
+	background-color: #000;
+}
+table { border-collapse: collapse; border-spacing: 0; font-size: inherit }
+li {
+	list-style: none;
+}
+img {
+	border: none;
+	vertical-align: top;
+}
+.flexbox, .tool {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+}
+.flex, .bar {
+	-webkit-box-flex: 1;
+	-moz-box-flex: 1;
+	-ms-flex: 1;
+	-webkit-flex: 1;
+	flex: 1;
+}
+.load {
+	background-image: url(../assets/meet_play_images/load.gif);
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+#media{
+	display: none;
+	height:0; width:0;
+}
+.main {
+	position: relative;
+	width: 480px;
+	height: 320px;
+	margin:0 auto;
+	overflow:hidden;
+}
+.mask {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.2);
+	z-index: 10;
+	display: none;
+}
+.content {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left:0;
+	top: 0;
+}
+.content li {
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+.content .img {
+	position:absolute;
+	left:0; top:0;
+	width:100%; height:100%;
+}
+.content .img td{
+	height:100%;
+	vertical-align: middle;
+}
+.content .img img {
+	max-width: 480px;
+	max-height: 320px;
+}
+.content .box_shadow_top {
+	height: 45%;
+	width: 45%;
+	position: absolute;
+	right: 2%;
+	bottom: 6%;
+	-webkit-mask-image: -webkit-gradient(linear, 0 0, 0 20%, from(rgba(0,0,0,0)), to(rgba(0,0,0,1)));
+	z-index: 2;
+}
+.content .box_shadow_bot {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	-webkit-mask-image: -webkit-gradient(linear, 0 80%, 0 100%, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+	overflow: hidden;
+}
+.content .box_text {
+	position: absolute;
+	left: 0;
+	top: 100%;
+	width: 100%;
+	font: 36px/44px Helvetica, STHeiti, Droid Sans Fallback;
+	color: #fff;
+	text-align: right;
+}
+.tool {
+	position: absolute;
+	width: 100%;
+	/*height: 92px;*/ height:50px; padding: 20px 0 12px;	
+	background: url(../assets/meet_play_images/tool_bg_ie2.png) top left repeat-x;
+	z-index: 99;
+	bottom: 0;
+}
+.tool .btn {
+	width: 50px;
+	height: 50px;
+	/*margin: 12px 0 0 20px;*/ margin: 0 0 0 20px;
+	cursor: pointer;
+	background-image: url(../assets/meet_play_images/tool.png);
+}
+.tool .btn_stop {
+	background-position: 0 0;
+}
+.tool .btn_play {
+	background-position: 0 -50px;
+}
+.tool .btn_voice {
+	background-position: -50px 0;
+}
+.tool .btn_mute {
+	background-position: -50px -50px;
+}
+.tool .bar_bg {
+	width: 50%;
+	margin: 0 0 0 20px;
+	background: #B2B3B2;
+	height: 4px;
+	overflow: hidden;
+	border-radius: 2px;
+	position:relative;
+	top: 24px;
+}
+.tool .bar_now {
+	background: #fff;
+	height: 4px;
+	overflow: hidden;
+	border-radius: 2px;
+}
+
+.ios_start{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background:url(../assets/meet_play_images/ios_start.png) center center no-repeat;
+}
+.portrait{
+	display:none;
+}
+
+
+@media only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+	.content .box_text {
+		font-size: 18px;
+		line-height: 22px;
+	}
+	.tool .btn {
+		width: 25px;
+		height: 25px;
+		margin: 25px 0 0 10px;
+		cursor: pointer;
+		background-image: url(../assets/meet_play_images/tool.png);
+		background-size: 50px 50px;
+		overflow:hidden;
+	}
+	.tool .btn_stop {
+		background-position: 0 0;
+	}
+	.tool .btn_play {
+		background-position: 0 -25px;
+	}
+	.tool .btn_voice {
+		background-position: -25px 0;
+	}
+	.tool .btn_mute {
+		background-position: -25px -25px;
+	}
+	.tool .bar_bg {
+		/*margin: 17px 0 0 10px;*/
+	top: 36px;
+	}
+}
+@media only screen and (min-width: 1024px) and (min-height: 768px){
+	.main {
+		width: 1024px;
+		height: 768px;
+	}
+	.content .img img {
+		max-width: 1024px;
+		max-height: 768px;
+	}
+}
+@media only screen and (min-width: 2048px) and (min-height: 1536px){
+	.main {
+		width: 2048px;
+		height: 1536px;
+	}
+	.content .img img {
+		max-width: 2048px;
+		max-height: 1536px;
+	}
+}
+@media only screen and (max-width: 760px) and (orientation:portrait){
+	.main {
+		width: 320px;
+		height: 480px;
+	}
+	/*.portrait{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background:#000 url(./meet_play_images/portrait.png) center center no-repeat;
+		display:block;
+		z-index:999;
+	}*/
+	.portrait{
+		display:none;
+	}
+}
+@media only screen and (max-width: 760px) and (orientation : landscape){
+	.portrait{
+		display:none;
+	}
+	.main {
+		width: 480px;
+		height: 320px;
+	}
+};
+
