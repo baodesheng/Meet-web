@@ -185,7 +185,7 @@ img,object{max-width:100%}
 .switch a{
 	position: absolute;
 	right: 10px;
-	bottom: 0;
+	bottom: 10px;
 	padding: 0 0 0 46px;
 	height: 46px;
 	color: rgba(255, 255, 255,0.75);
