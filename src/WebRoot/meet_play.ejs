@@ -12,7 +12,9 @@
 </head>
 
 <body class="load">
-<!--<audio id="media" src="assets/meet_play_images/music.m4a" loop></audio>-->
+<% if (creamData.music) {%>
+<audio id="media" src="<%- creamData.music%>" loop></audio>
+<% } %>
 <div class="main">
 <div class="mask"></div>
 <ul class="content">

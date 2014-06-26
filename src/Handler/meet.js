@@ -97,6 +97,7 @@ function playMeet(request, response) {
                             author: article.author,
                             title: article.title,
                             image: article.image,
+                            music: article.music,
                             publish_time: article.publish_time
                         };
                         loadData.user = {

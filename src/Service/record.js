@@ -72,7 +72,7 @@ function getArticleContentById(id, version, next) {
  * @param next
  */
 function getArticleById(params, next) {
-    var sql = "select id, token, author, author_id, avatar, title, image, '' AS content, type, status, DATE_FORMAT(update_time,'%Y-%m-%d %H:%i:%s') as publish_time, DATE_FORMAT(create_time,'%Y-%m-%d') as create_time "
+    var sql = "select id, token, author, author_id, avatar, title, image, music, '' AS content, type, status, DATE_FORMAT(update_time,'%Y-%m-%d %H:%i:%s') as publish_time, DATE_FORMAT(create_time,'%Y-%m-%d') as create_time "
     + " from " + TABLE_NAME_LR_ARTICLE + " where id=" + params.articleId;
     if (!params.a || isNaN(params.a) || params.a != -1) {
         sql += " and status<>4 ";
