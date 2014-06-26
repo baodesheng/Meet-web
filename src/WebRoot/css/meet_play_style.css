@@ -117,7 +117,7 @@ img {
 	/*height: 92px;*/ height:50px; padding: 20px 0 12px;	
 	background: url(../assets/meet_play_images/tool_bg_ie2.png) top left repeat-x;
 	z-index: 99;
-	bottom: 20px;
+	bottom: 54px;
 }
 .tool .btn {
 	width: 50px;
