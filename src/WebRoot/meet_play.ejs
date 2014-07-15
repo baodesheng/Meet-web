@@ -54,11 +54,11 @@
 
         var itemDetail;
         if (itemImgUrl) {
-            itemDetail = (item.detail ? item.detail.replace(/\<br\>/gi,"\r\n") : "<br/><br/>");
+            itemDetail = (item.detail ? item.detail.replace(/\<br\>/gi,"\r\n") : "<br/>");
         } else if (!numString) {
-            itemDetail = (item.detail ? (item.detail.replace(/^\s+|\s+$/g,"").replace(/\s+/g,"<br>")) : "<br/><br/>");
+            itemDetail = (item.detail ? (item.detail.replace(/^\s+|\s+$/g,"").replace(/\s+/g,"<br>")) : "<br/>");
         } else {
-            itemDetail = item.detail ? item.detail : "<br/><br/>";
+            itemDetail = item.detail ? item.detail : "<br/>";
         }
     %>
 
