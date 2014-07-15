@@ -42,8 +42,9 @@
             itemImgUrl = (item.image ? item.image : "").trim();//针对原创
         }
 
+        var numString;
         if (item.detail) {
-            var numString = item.detail.match(numReg);
+            numString = item.detail.match(numReg);
             if (numString) {
                 for (var j=0; j<numString.length; j++) {
                     item.detail = item.detail.replace(emojiReg,"<span class='emoji"+numString[j]+" emoji-pic'></span>");
@@ -53,11 +54,11 @@
 
         var itemDetail;
         if (itemImgUrl) {
-            itemDetail = (item.detail ? item.detail.replace(/\<br\>/gi,"\r\n") : "");
+            itemDetail = (item.detail ? item.detail.replace(/\<br\>/gi,"\r\n") : "<br/><br/>");
         } else if (!numString) {
-            itemDetail = (item.detail ? (item.detail.replace(/^\s+|\s+$/g,"").replace(/\s+/g,"<br>")) : "");
+            itemDetail = (item.detail ? (item.detail.replace(/^\s+|\s+$/g,"").replace(/\s+/g,"<br>")) : "<br/><br/>");
         } else {
-            itemDetail = item.detail;
+            itemDetail = item.detail ? item.detail : "<br/><br/>";
         }
     %>
 
