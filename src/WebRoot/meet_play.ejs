@@ -53,12 +53,17 @@
         }
 
         var itemDetail;
+        var emptyClass = "";
         if (itemImgUrl) {
             itemDetail = (item.detail ? item.detail.replace(/\<br\>/gi,"\r\n") : "<br/>");
         } else if (!numString) {
             itemDetail = (item.detail ? (item.detail.replace(/^\s+|\s+$/g,"").replace(/\s+/g,"<br>")) : "<br/>");
         } else {
             itemDetail = item.detail ? item.detail : "<br/>";
+        }
+
+        if (itemDetail == "<br/>") {
+            emptyClass = "empty";
         }
     %>
 
@@ -68,7 +73,7 @@
         <% if (itemDetail) { %>
         <div class="box_shadow_top">
             <div class="box_shadow_bot">
-                <div class="box_text">
+                <div class="box_text <%- emptyClass%>">
                     <p><%- itemDetail%></p>
                 </div>
             </div>
@@ -81,7 +86,7 @@
     <li>
         <div class="box_shadow_top">
             <div class="box_shadow_bot">
-                <div class="box_text">
+                <div class="box_text <%- emptyClass%>">
                     <p><%- itemDetail%></p>
                 </div>
             </div>

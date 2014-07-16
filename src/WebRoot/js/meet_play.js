@@ -37,7 +37,7 @@ jQuery(function($){
 		liba.list.fadeOut(1000).eq(n).fadeIn(2000, function(){
 			var o = $(this).find('.box_text');
 			var h = o.height();
-			var l = (h + $(window).height() * 0.5) / 36;
+			var l = o.is('.empty') ? 0.1 : (h + $(window).height() * 0.5) / 36;
 			liba.mask.fadeIn(1000, function(){
 				liba.progress((n + 1) / liba.size * 100, 1000 * l + 5000);
 				o.animate({top: -h + 'px'}, 1000 * l, 'linear', function(){
